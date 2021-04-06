@@ -10,13 +10,9 @@
   }
 
   nav{
-      background-color: #4db6ac;
       box-shadow: inset 0px -3px 6px 2px rgba(99, 8, 8, 0.15);
-  }
-
-  .page-footer{
-      background-color: #4db6ac;
-      box-shadow: inset 0px 3px 6px 2px rgba(0, 0, 0, 15%);
+      height: 10vh;
+      min-height: 65px;
   }
 
   .nav-wrapper{
@@ -27,6 +23,10 @@
       display: flex;
       flex: 1;
       justify-content: center;
+  }
+
+  nav ul li{
+      padding: 0 5%;
   }
 
   .brand-logo {
@@ -44,20 +44,45 @@
       justify-content: flex-end;
   }
 
+  .sidenav ul{
+      box-shadow: inset 6px 3px 15px 3px rgb(0 0 0 / 15%);
+  }
+
+  .sidenav li{
+      margin-top: 25px;
+      text-align: center;
+  }
+
+  .sidenav li a{
+      font-size: 22px;
+      color: white;
+  }
+
+/* Footer */
+
+  .page-footer{
+      box-shadow: inset 0px 3px 6px 2px rgba(0, 0, 0, 15%);
+      padding: 30px 0px;
+  }
+
   #footer-container{
       text-align: center;
+      line-height: 1; /* Vertically aligns items */
+  }
+
+  #footer-row{
+      margin-bottom: 0px; /* Overrides Materialize default */
   }
 
   .footer-icon{
       padding: 0px 8px;
-      font-size: 4vw;
   }
 
   /* Media Queries */
-@media only screen and (min-width: 601px){
 
-.sidenav-trigger{
-    display: none!important; /* Hides mobile nav bar on medium devices. */
-}
+  @media only screen and (min-width: 1200px){
 
-}
+    nav ul li {
+        padding: 0 10%;
+    }
+  }
