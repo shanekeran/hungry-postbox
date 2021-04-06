@@ -29,6 +29,15 @@
       justify-content: center;
   }
 
+  .brand-logo {
+      height: 100%
+  }
+
+  #nav-logo{
+      height: inherit;
+      padding: 7px;
+  }
+
   .sidenav-trigger{
       display: flex;
       flex: 2;
@@ -39,8 +48,9 @@
       text-align: center;
   }
 
-  .inset-shadow{
-      box-shadow: inset 0px 0px 6px 3px rgba(0, 0, 0, 16%);
+  .footer-icon{
+      padding: 0px 8px;
+      font-size: 4vw;
   }
 
   /* Media Queries */
