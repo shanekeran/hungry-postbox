@@ -69,13 +69,14 @@
       text-align: center;
       line-height: 1; /* Vertically aligns items */
   }
-
+  
   #footer-row{
       margin-bottom: 0px; /* Overrides Materialize default */
   }
 
   .footer-icon{
       padding: 0px 8px;
+      color: white;
   }
 
   /* Hover effects.*/
