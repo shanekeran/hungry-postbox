@@ -143,8 +143,9 @@
 
   #home-container{
     width: 90vw!important;
-    height: 60vh;
+    height: 60vw;
     max-width: 1400px;
+    min-height: 400px;
     margin-top: 8vh;
     text-align: center;
   }
@@ -167,10 +168,6 @@
     font-size: 3.7vw;
   }
 
-  #register-button:hover{
-    
-  }
-
   #home-container h1{
     padding: 0 5vw;
   }
@@ -178,6 +175,7 @@
   #instructions-row{
     text-align: center;
     margin: 0 2.5vw;
+    padding: 30px 0;
   }
 
   .fa-user-check, .fa-handshake, .fa-pen-fancy, .fa-mail-bulk{
@@ -218,6 +216,12 @@
     .nav-left, .nav-right{
       margin: 0px;
     }
+
+    #home-container{
+      height: 40vw;
+      min-height: 350px;
+      max-height: 600px;
+    }
     
     #home-container .row {
       display: flex;
@@ -236,12 +240,21 @@
       font-size: 18px;
     }
 
+    .fa-user-check, .fa-handshake, .fa-pen-fancy, .fa-mail-bulk{
+      font-size: 50px;
+    }
+
   }
 
   @media only screen and (min-width: 1200px){
 
     nav ul li {
         padding: 0 10%;
+    }
+
+    #home-container{
+      height: 35vw;
+      min-height: 400px;
     }
 
     #register-button{
