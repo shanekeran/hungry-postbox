@@ -172,10 +172,15 @@
     padding: 0 5vw;
   }
 
+  #about{
+    background-color: #4db6ac;
+  }
+
   #instructions-row{
     text-align: center;
     margin: 0 2.5vw;
     padding: 30px 0;
+    color: white;
   }
 
   .fa-user-check, .fa-handshake, .fa-pen-fancy, .fa-mail-bulk{
@@ -184,6 +189,24 @@
 
   #instructions-row span{
     padding: 0 3px;
+  }
+
+  #about-row{
+    text-align: center;
+  }
+
+  #letters-img-container{
+    line-height: 320px;
+  }
+
+  #letters-img{
+    width: 50%;
+    max-width: 310px;
+    vertical-align: middle;
+  }
+
+  #aboutus-container{
+    padding: 0 40px;
   }
 
   /* Media Queries */
