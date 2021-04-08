@@ -1,14 +1,66 @@
 {% extends "base.html" %}
 {% block content %}
+    <!--Home Page-->
     <section id="home">
         <div class="container" id="home-container">
             <div class="row">
+                <!--Logo (large size)-->
                 <div class="col s12 l6">
                     <img src="./static/images/hp-logo.png" alt="Hungry Postbox logo" id="home-logo">
                 </div>
+                <!--Heading and CTA button-->
                 <div class="col s12 l6" id="home-heading">
                     <h1 class="flow-text">Connect with people across the globe through handwritten letters.</h1><br>
                     <a href="#" id="register-button" class="hvr-grow-shadow">Register now!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <!--4 steps on how to use the site-->
+        <div class="row" id="instructions-row">
+            <div class="col s8 m3">
+                <!-- Step 1-->
+                <div class="row">
+                    <div class="col s6 m12">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="col s6 m12">
+                        <span class="flow-text">Register your account</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Step 2-->
+            <div class="col s8 m3">
+                <div class="row">
+                    <div class="col s6 m12">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="col s6 m12">
+                        <span class="flow-text">Find a pen pal</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Step 3-->
+            <div class="col s8 m3">
+                <div class="row">
+                    <div class="col s6 m12">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <div class="col s6 m12">
+                        <span class="flow-text">Write your letter</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Step 4-->
+            <div class="col s8 m3">
+                <div class="row">
+                    <div class="col s6 m12">
+                        <i class="fas fa-mail-bulk"></i>
+                    </div>
+                    <div class="col s6 m12">
+                        <span class="flow-text">Wait for a reply in the post</span>
+                    </div>
                 </div>
             </div>
         </div>
