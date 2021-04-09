@@ -204,13 +204,9 @@
     text-align: center;
   }
 
-  #letters-img-container{
-    line-height: 320px;
-  }
-
   #letters-img{
-    width: 50%;
-    max-width: 310px;
+    width: 40%;
+    max-width: 130px;
     vertical-align: middle;
   }
 
@@ -266,6 +262,11 @@
       font-size: 2.1vw;
     }
 
+    #letters-img{
+      width: 25%;
+      max-width: 200px;
+    }
+
     #discover h2, #aboutus-container h2{
       font-size: 24px;
     }
@@ -309,6 +310,15 @@
 
     .fa-user-check, .fa-handshake, .fa-pen-fancy, .fa-mail-bulk{
       font-size: 50px;
+    }
+
+    #letters-img-container{
+      line-height: 320px;
+    }
+
+    #letters-img{
+      width: 45%;
+      max-width: 400px;
     }
 
     #discover h2, #aboutus-container h2{
