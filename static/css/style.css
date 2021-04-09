@@ -141,21 +141,31 @@
 
   /*----- Index.html -----*/
 
-  #home-container{
-    width: 90vw!important;
+  #home{
+    display: flex;
     height: 60vw;
+    min-height: 450px;
+  }
+
+  #home-container{
+    width: 90vw!important; /* remove? */
     max-width: 1400px;
-    min-height: 400px;
-    margin-top: 8vh;
+    margin: auto;
     text-align: center;
   }
 
   #home-logo{
     width: 50%;
+    max-width: 200px;
   }
 
   #home-heading{
     margin-bottom: 20px;
+  }
+
+  #home-heading h1{
+    font-size: 21px;
+    padding: 0 5vw;
   }
 
   .register-buttons{
@@ -169,10 +179,6 @@
 
   #register-button-1{
     font-size: 3.7vw;
-  }
-
-  #home-container h1{
-    padding: 0 5vw;
   }
 
   #about{
@@ -210,6 +216,7 @@
 
   #aboutus-container{
     padding: 0 40px;
+    color: white;
   }
 
   #discover .container{
@@ -226,10 +233,10 @@
   }
 
   #discover h2, #aboutus-container h2{
-    font-size: 21px;
+    font-size: 20px;
   }
 
-  #discover p, #register-button-2{
+  #discover .container p, #register-button-2{
     font-size: 15px;
   }
 
@@ -247,14 +254,24 @@
 
     #home-logo{
       width: 35%;
+      max-width: 350px;
     }
 
-    #home-container h1{
+    #home-heading h1{
+      font-size: 25px;
       padding: 0 15vw;
     }
 
     #register-button-1{
       font-size: 2.1vw;
+    }
+
+    #discover h2, #aboutus-container h2{
+      font-size: 24px;
+    }
+
+    #discover .container p, #aboutus-container p {
+      font-size: 17px;
     }
 
   }
@@ -265,7 +282,7 @@
       margin: 0px;
     }
 
-    #home-container{
+    #home{
       height: 40vw;
       min-height: 350px;
       max-height: 600px;
@@ -278,9 +295,11 @@
 
     #home-logo{
       width: 60%;
+      max-width: 450px;
     }
 
-    #home-container h1{
+    #home-heading h1{
+      font-size: 30px;
       padding: 0;
     }
 
@@ -292,6 +311,14 @@
       font-size: 50px;
     }
 
+    #discover h2, #aboutus-container h2{
+      font-size: 29px;
+    }
+
+    #discover .container p, #aboutus-container p {
+      font-size: 19px;
+    }
+
   }
 
   @media only screen and (min-width: 1200px){
@@ -300,7 +327,7 @@
         padding: 0 10%;
     }
 
-    #home-container{
+    #home{
       height: 35vw;
       min-height: 400px;
     }
