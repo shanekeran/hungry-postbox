@@ -158,13 +158,16 @@
     margin-bottom: 20px;
   }
 
-  #register-button{
+  .register-buttons{
     padding: 7px 20px;
     border: 1px solid #545454;
     border-radius: 30px;
     background-color: #d75a5a;
     text-decoration: none;
     color: white;
+  }
+
+  #register-button-1{
     font-size: 3.7vw;
   }
 
@@ -217,6 +220,20 @@
     top: -19%;
   }
 
+  #discover .container{
+    padding: 0 6px;
+    margin-bottom: 40px;
+  }
+
+  #discover h2, #aboutus-container h2{
+    font-size: 21px;
+  }
+
+  #discover p, #register-button-2{
+    font-size: 15px;
+  }
+
+
   /* Media Queries */
 
   @media only screen and (min-width: 601px) {
@@ -236,7 +253,7 @@
       padding: 0 15vw;
     }
 
-    #register-button{
+    #register-button-1{
       font-size: 2.1vw;
     }
 
@@ -267,7 +284,7 @@
       padding: 0;
     }
 
-    #register-button{
+    #register-button-1{
       font-size: 18px;
     }
 
@@ -288,7 +305,7 @@
       min-height: 400px;
     }
 
-    #register-button{
+    #register-button-1{
       font-size: 20px;
     }
 
