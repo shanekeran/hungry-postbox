@@ -9,3 +9,9 @@
       var elems = document.querySelectorAll('.carousel');
       var instances = M.Carousel.init(elems, {});
     });
+
+  // Date picker for registration form
+  document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.datepicker');
+      var instances = M.Datepicker.init(elems, {format: 'dd/mm/yyyy'});
+    });
