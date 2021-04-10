@@ -1,1 +1,31 @@
 {% extends "base.html" %}
+{% block content %} 
+
+<section id="registration">
+    <div class="container" id="form-container">
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="JohnDoe123" id="username" type="text" class="validate">
+                        <label for="username">Username</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="johndoe@email.com" id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Must be between 8-20 characters" id="password" type="password" class="validate" minlength="8" maxlength="20">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %} 
