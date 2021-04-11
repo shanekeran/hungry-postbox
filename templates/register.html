@@ -4,13 +4,13 @@
 <section id="registration">
     <div class="container" id="form-container">
         <div class="row">
-            <!--Multi-step form-->
+            <!--Multi-step form (base code sourced from w3schools and modified(see README))-->
             <form id="regForm" class="col s12">
                 <!-- Form page 1-->
                 <div class="form-page">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input placeholder="JohnDoe123" id="username" type="text" class="validate" minlength="6" required>
+                            <input placeholder="JohnDoe123" id="username" type="text" class="validate" minlength="5" required>
                             <label for="username">Username</label>
                         </div>
                     </div>
@@ -23,7 +23,7 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <input placeholder="Must be between 8-20 characters" id="password" type="password" class="validate"
-                             minlength="10" maxlength="20" required>
+                             minlength="5" maxlength="20" required>
                             <label for="password">Password</label>
                         </div>
                     </div>
@@ -77,18 +77,18 @@
                     </div>
                 </div>
                 <!-- Prev/Next buttons -->
-                <div style="overflow:auto;">
-                    <div style="float:right;">
+                <div id="form-button-container">
+                    <div id="form-buttons">
                       <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
                       <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
                     </div>
                   </div>
-                <!-- page icons -->
-                <div style="text-align:center;margin-top:40px;">
-                    <i class="step fas fa-circle"></i>
-                    <i class="step fas fa-circle"></i>
-                    <i class="step fas fa-circle"></i>
-                    <i class="step fas fa-circle"></i>
+                <!-- Indicator icons -->
+                <div id="indicator-container">
+                    <i class="indicator fas fa-circle"></i>
+                    <i class="indicator fas fa-circle"></i>
+                    <i class="indicator fas fa-circle"></i>
+                    <i class="indicator fas fa-circle"></i>
                   </div>
             </form>
         </div>

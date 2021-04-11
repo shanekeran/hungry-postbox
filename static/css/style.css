@@ -254,7 +254,12 @@
     display: none;
   }
 
-  .step {
+  #indicator-container{
+    text-align:center;
+    margin-top:40px;
+  }
+
+  .indicator {
     color: red;
     height: 15px;
     width: 15px;
@@ -265,15 +270,21 @@
     opacity: 0.8;
   }
 
-  /* Mark the active step: */
-  .step.active {
+  .indicator.active {
     opacity: 1;
   }
   
-  /* Mark the steps that are finished and valid: */
-  .step.finish {
+  .indicator.finish {
     background-color: transparent;
     color: green;
+  }
+
+  #form-button-container{
+    overflow: auto;
+  }
+
+  #form-buttons{
+    float: right;
   }
 
 
