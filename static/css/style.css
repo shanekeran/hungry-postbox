@@ -280,19 +280,19 @@
   }
 
   #prevBtn, #nextBtn {
-    font-size: 16px;
-    padding: 5px 15px;
-    background-color: #4db6ac;
-    color: white;
+    font-size: 22px;
+    background-color: transparent;
+    border: none;
+    color: #545454;
   }
 
   #prevBtn{
-    border-radius: 15px 1px 1px 15px;
+    margin-left: 10px;
   }
 
   #nextBtn{
-    border-radius: 1px 15px 15px 1px;
     float: right;
+    margin-right: 10px;
   }
 
   /* envelope */

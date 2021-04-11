@@ -39,9 +39,9 @@
       document.getElementById("prevBtn").style.display = "inline";
     }
     if (n == (pages.length - 1)) {
-      document.getElementById("nextBtn").innerHTML = "Register"; // on the last page, next is replaced with Register.
+      document.getElementById("nextBtn").innerHTML = "Register <i class='fas fa-check-circle' id='complete-form'></i>"; // on the last page, this replaces the next icon.
     } else {
-      document.getElementById("nextBtn").innerHTML = "Next";
+      document.getElementById("nextBtn").innerHTML = "<i class='fas fa-chevron-circle-right'></i>";
     }
     // ... and run a function that displays the correct page indicator:
     updateIndicators(n)
