@@ -254,6 +254,11 @@
     display: none;
   }
 
+  #gender-input{
+    position: relative;
+    top: 25px;
+  }
+
   #indicator-container{
     text-align:center;
   }
@@ -345,6 +350,12 @@
   }
   
   .envelope:hover .letter{
+    top:-130px;
+    height:400px;
+    z-index: 4;
+  }
+
+  .letter-open{
     top:-130px;
     height:400px;
     z-index: 4;

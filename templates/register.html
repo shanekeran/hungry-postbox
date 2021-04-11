@@ -2,7 +2,7 @@
 {% block content %} 
 
 <section id="registration">
-    <div class="envelope"> <!-- form container-->
+    <div class="envelope" onmouseover="remainOpen()"> <!-- form container-->
         <div class="back"></div> <!-- open envelope flap shape-->
         <div class="row"> 
             <!--Multi-step form (base code sourced from w3schools and modified(see README))-->
@@ -32,23 +32,21 @@
                 <!-- Form page 2-->
                 <div class="form-page">
                     <div class="row">
-                        <div class="input-field col s12">
+                        <div class="input-field col s6">
                             <input id="dob" type="text" class="datepicker" required>
                             <label for="dob">Date of Birth</label>
                         </div>
-                    </div>
-                        <div class="row">
-                            <div class="col s12">
-                                <label for="male">
-                                    <input name="gender" type="radio" value="m" id="male" checked>
-                                    <span>Male</span>
-                                </label>
-                                <label for="female">
-                                    <input name="gender" type="radio" value="f" id="female">
-                                    <span>Female</span>
-                                </label>
-                            </div>
+                        <div class="col s6" id="gender-input">
+                            <label for="male">
+                                <input name="gender" type="radio" value="m" id="male" checked>
+                                <span>Male</span>
+                            </label>
+                            <label for="female">
+                                <input name="gender" type="radio" value="f" id="female">
+                                <span>Female</span>
+                            </label>
                         </div>
+                    </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <input placeholder="Irish" id="nationality" type="text" class="validate" required>

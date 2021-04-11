@@ -10,11 +10,19 @@
       var instances = M.Carousel.init(elems, {});
     });
 
-  // Date picker for registration form
+  // Date picker for registration form, displays over registration section.
   document.addEventListener('DOMContentLoaded', function() {
+    let registrationSection = document.getElementById("registration")
       var elems = document.querySelectorAll('.datepicker');
-      var instances = M.Datepicker.init(elems, {format: 'dd/mm/yyyy'});
+      var instances = M.Datepicker.init(elems, {format: 'dd/mm/yyyy',
+                                                container: registrationSection});
     });
+  
+  // Function to prevent register form returning inside envelope container after hover
+  function remainOpen() {
+    const form = document.getElementById("regForm");
+    form.classList.add("letter-open")
+    }
   
   // Multi step form, original code sourced from w3schools and modified (see README).
   var currentPage = 0;
