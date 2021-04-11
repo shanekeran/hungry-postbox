@@ -261,17 +261,9 @@
 
   .indicator {
     color: red;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    border: none;
-    border-radius: 50%;
+    font-size: 16px;
+    margin: 0 5px;
     display: inline-block;
-    opacity: 0.8;
-  }
-
-  .indicator.active {
-    opacity: 1;
   }
   
   .indicator.finish {
@@ -283,7 +275,19 @@
     overflow: auto;
   }
 
-  #form-buttons{
+  #prevBtn, #nextBtn {
+    font-size: 16px;
+    padding: 5px 15px;
+    background-color: #4db6ac;
+    color: white;
+  }
+
+  #prevBtn{
+    border-radius: 15px 1px 1px 15px;
+  }
+
+  #nextBtn{
+    border-radius: 1px 15px 15px 1px;
     float: right;
   }
 
