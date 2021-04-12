@@ -254,6 +254,25 @@
     display: none;
   }
 
+  .form-page label {
+    font-size: 16px;
+    color: #545454;
+  }
+
+  input {
+    border-bottom: 1px dashed #545454!important;
+  }
+
+  .invalid {
+    border-bottom: 2px solid #ff7575!important;
+    box-shadow: none!important;
+  }
+
+  .valid{
+    border-bottom: 2px solid #4db6ac!important;
+    box-shadow: none!important;
+  }
+
   #gender-input{
     position: relative;
     top: 25px;
@@ -293,6 +312,14 @@
   #nextBtn{
     float: right;
     margin-right: 10px;
+  }
+
+  #complete-form{
+    border: 1px solid #454545;
+    color: white;
+    background-color: #545454;
+    padding: 3px 8px;
+    font-size: 18px;
   }
 
   /* envelope */
