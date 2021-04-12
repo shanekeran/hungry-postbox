@@ -240,6 +240,7 @@
 
   #registration{
     height: 85vh;
+    min-height: 380px;
     width: 100vw;
   }
 
@@ -259,10 +260,10 @@
     color: #545454;
   }
 
-  input {
-    border-bottom: 1px dashed #545454!important;
-    font-size: 13px!important;
-    margin: 0!important;
+  input[type=text]:not(.browser-default) {
+    border-bottom: 1px dashed #545454;
+    font-size: 13px;
+    margin: 0;
   }
 
   .input-field{
@@ -296,7 +297,7 @@
   }
 
   .indicator {
-    color: red;
+    color: rgb(216, 76, 94);
     font-size: 16px;
     margin: 0 5px;
     display: inline-block;
@@ -431,32 +432,37 @@
     #discover .container p, #aboutus-container p {
       font-size: 17px;
     }
+
+    #registration{
+      min-height: 420px;
+    }
     
     /* envelope */
     .envelope{
-      width:500px;
-      height:300px;
-    }
-    .envelope:before{
-      border-left:500px solid transparent;
-      border-bottom:300px solid #4db6ac;
-    }
-    .envelope:after{
-      border-right:500px solid transparent;
-      border-bottom:300px solid #4db6ac;
-    }
-    .back{
-      border-top:150px solid #4db6ac;
-      border-left:250px solid transparent;
-      border-right:250px solid transparent;
-    }
-    .letter{
       width:400px;
       height:200px;
     }
+    .envelope:before{
+      border-left:400px solid transparent;
+      border-bottom:200px solid #4db6ac;
+    }
+    .envelope:after{
+      border-right:400px solid transparent;
+      border-bottom:200px solid #4db6ac;
+    }
+    .back{
+      border-top:100px solid #4db6ac;
+      border-left:200px solid transparent;
+      border-right:200px solid transparent;
+    }
+    .letter{
+      width:350px;
+      height:100px;
+    }
     
     .envelope:hover .letter, .letter-open{
-      height:400px;
+      height: fit-content;
+      width: 350px;
       left: 0%!important;
       transform: translateX(0%)!important;
     }
@@ -520,6 +526,50 @@
 
     #discover .container p, #aboutus-container p {
       font-size: 19px;
+    }
+
+    #registration{
+      min-height: 500px;
+    }
+
+    /* envelope */
+    .envelope{
+      width:500px;
+      height:300px;
+    }
+    .envelope:before{
+      border-left:500px solid transparent;
+      border-bottom:300px solid #4db6ac;
+    }
+    .envelope:after{
+      border-right:500px solid transparent;
+      border-bottom:300px solid #4db6ac;
+    }
+    .back{
+      border-top:140px solid #4db6ac;
+      border-left:250px solid transparent;
+      border-right:250px solid transparent;
+    }
+    .letter{
+      width:420px;
+      height:200px;
+    }
+    
+    .envelope:hover .letter, .letter-open{
+      height:430px;
+      width: 420px;
+      left: 0%!important;
+      transform: translateX(0%)!important;
+    }
+
+    /* end of envelope */
+
+    .form-page label {
+      font-size: 16px;
+    }
+
+    input[type=text]:not(.browser-default), textarea.materialize-textarea{
+      font-size: 15px;
     }
 
   }
