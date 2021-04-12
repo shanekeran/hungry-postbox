@@ -255,12 +255,18 @@
   }
 
   .form-page label {
-    font-size: 16px;
+    font-size: 14px;
     color: #545454;
   }
 
   input {
     border-bottom: 1px dashed #545454!important;
+    font-size: 13px!important;
+    margin: 0!important;
+  }
+
+  .input-field{
+    margin-bottom: 0;
   }
 
   .invalid {
@@ -276,6 +282,13 @@
   #gender-input{
     position: relative;
     top: 25px;
+  }
+
+  textarea.materialize-textarea{
+    max-height: 100px;
+    min-height: 90px;
+    font-size: 13px;
+    overflow-y: scroll;
   }
 
   #indicator-container{
@@ -305,27 +318,22 @@
     color: #545454;
   }
 
-  #prevBtn{
-    margin-left: 10px;
-  }
-
   #nextBtn{
     float: right;
-    margin-right: 10px;
   }
 
   #complete-form{
     border: 1px solid #454545;
     color: white;
     background-color: #545454;
-    padding: 3px 8px;
-    font-size: 18px;
+    padding: 3px 4px;
+    font-size: 15px;
   }
 
   /* envelope */
   .envelope{
-    width:500px;
-    height:300px;
+    width:250px;
+    height:140px;
     background-color:#3c8f86;
     margin: auto;
     position:relative;
@@ -339,8 +347,8 @@
     right:0;
     z-index:3;
     position:absolute;
-    border-left:500px solid transparent;
-    border-bottom:300px solid #4db6ac;
+    border-left:250px solid transparent;
+    border-bottom:150px solid #4db6ac;
   }
   .envelope:after{
     content:"";
@@ -348,44 +356,42 @@
     left:0;
     z-index:3;
     position:absolute;
-    border-right:500px solid transparent;
-    border-bottom:300px solid #4db6ac;
+    border-right:250px solid transparent;
+    border-bottom:150px solid #4db6ac;
   }
   .back{
     position:absolute;
     top:0;
     z-index:-1;
     transform-origin:top;
-    border-top:150px solid #4db6ac;
-    border-left:250px solid transparent;
-    border-right:250px solid transparent;
+    border-top:75px solid #4db6ac;
+    border-left:125px solid transparent;
+    border-right:125px solid transparent;
     transform: rotateX(180deg); /* the open envelope flap */
   }
   .letter{
     position:relative;
     top:0;
     padding:20px 10px;
-    width:400px;
-    height:200px;
+    width:200px;
+    height:100px;
     overflow:hidden;
     z-index:2;
     margin: 0 auto;
     background-color:#F1EBE3;
     border: 1px solid rgba(0, 0, 0, 0.30);
     box-shadow: 0px 0px 3px #9d9d9d, inset 0px 0px 27px #fff;
-    transition: all 0.5s ease-in-out;
   }
   
-  .envelope:hover .letter{
+  .envelope:hover .letter, .letter-open{
     top:-130px;
-    height:400px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: fit-content;
+    width: 60vw;
+    min-width: 250px;
     z-index: 4;
-  }
-
-  .letter-open{
-    top:-130px;
-    height:400px;
-    z-index: 4;
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out ;
   }
 
   /* Media Queries */
@@ -424,6 +430,42 @@
 
     #discover .container p, #aboutus-container p {
       font-size: 17px;
+    }
+    
+    /* envelope */
+    .envelope{
+      width:500px;
+      height:300px;
+    }
+    .envelope:before{
+      border-left:500px solid transparent;
+      border-bottom:300px solid #4db6ac;
+    }
+    .envelope:after{
+      border-right:500px solid transparent;
+      border-bottom:300px solid #4db6ac;
+    }
+    .back{
+      border-top:150px solid #4db6ac;
+      border-left:250px solid transparent;
+      border-right:250px solid transparent;
+    }
+    .letter{
+      width:400px;
+      height:200px;
+    }
+    
+    .envelope:hover .letter, .letter-open{
+      height:400px;
+      left: 0%!important;
+      transform: translateX(0%)!important;
+    }
+
+    /* end of envelope */
+
+    #complete-form{
+      padding: 3px 8px;
+      font-size: 18px;
     }
 
   }
