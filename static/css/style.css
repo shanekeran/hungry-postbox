@@ -305,7 +305,7 @@
   
   .indicator.finish {
     background-color: transparent;
-    color: green;
+    color: #2dad95;
   }
 
   #form-button-container{
@@ -393,6 +393,23 @@
     min-width: 250px;
     z-index: 4;
     transition: width 0.5s ease-in-out, height 0.5s ease-in-out ;
+  }
+
+  /*----- Login.html -----*/
+
+  #login{
+    display: flex;
+    height: 80vh;
+    min-height: 300px;
+    max-height: 700px;
+  }
+
+  #login-container{
+    margin: auto;
+  }
+
+  #login-image{
+    width: 100%;
   }
 
   /* Media Queries */
