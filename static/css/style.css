@@ -260,7 +260,7 @@
     color: #545454;
   }
 
-  input[type=text]:not(.browser-default) {
+  input[type=text]:not(.browser-default), input[type=password]:not(.browser-default) {
     border-bottom: 1px dashed #545454;
     font-size: 13px;
     margin: 0;
