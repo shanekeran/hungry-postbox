@@ -402,6 +402,7 @@
     height: 80vh;
     min-height: 300px;
     max-height: 700px;
+    text-align: center;
   }
 
   #login-container{
@@ -409,7 +410,20 @@
   }
 
   #login-image{
-    width: 100%;
+    width: 50%;
+    min-width: 150px;
+    max-width: 250px;
+  }
+
+  #login-form{
+    width: 70vw;
+    max-width: 350px;
+    margin: auto;
+  }
+
+  #login-container .btn{
+    border-radius: 20px;
+    margin-top: 15px;
   }
 
   /* Media Queries */
@@ -587,6 +601,15 @@
 
     input[type=text]:not(.browser-default), textarea.materialize-textarea{
       font-size: 15px;
+    }
+
+    #login-image{
+      width: 100%;
+      max-width: 320px;
+    }
+
+    #login-form{
+      max-width: 420px;
     }
 
   }
