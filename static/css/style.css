@@ -242,6 +242,11 @@
 
   /*----- Register.html -----*/
 
+  .flash{
+    text-align: center;
+    color: rgb(216, 76, 94);
+  }
+
   #registration{
     height: 85vh;
     min-height: 380px;
