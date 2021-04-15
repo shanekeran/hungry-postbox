@@ -1,4 +1,8 @@
   /*----- Base.html -----*/
+  html{
+    scroll-behavior: smooth;
+  }
+  
   body {
     display: flex;
     min-height: 100vh;
@@ -341,6 +345,7 @@
     top: 50%;
     transform: translateY(-30%);
     z-index:1;
+    box-shadow: -8px 10px 10px 0px #00000045;
   }
   .envelope:before{
     content:"";
@@ -424,6 +429,7 @@
   #login-container .btn{
     border-radius: 20px;
     margin-top: 15px;
+    text-transform: none;
   }
 
   /* Media Queries */
@@ -447,8 +453,8 @@
       padding: 0 15vw;
     }
 
-    #register-button-1{
-      font-size: 2.1vw;
+    #register-button-1, #login-container .btn{
+      font-size: 19px;
     }
 
     #letters-img{
@@ -534,8 +540,8 @@
       padding: 0;
     }
 
-    #register-button-1{
-      font-size: 18px;
+    #register-button-1, #login-container .btn{
+      font-size: 21px;
     }
 
     .fa-user-check, .fa-handshake, .fa-pen-fancy, .fa-mail-bulk{
@@ -623,10 +629,6 @@
     #home{
       height: 35vw;
       min-height: 400px;
-    }
-
-    #register-button-1{
-      font-size: 20px;
     }
 
   }
