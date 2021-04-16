@@ -244,6 +244,7 @@
 
   .flash{
     text-align: center;
+    margin: auto;
     color: rgb(216, 76, 94);
   }
 

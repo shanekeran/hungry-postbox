@@ -10,6 +10,16 @@
                 </div>
                 <!--Heading and CTA button-->
                 <div class="col s12 l6" id="home-heading">
+                     <!-- flash messages displayed here-->
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="row">
+                                    <h4 class="flash">{{ message }}</h4>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
                     <h1>Connect with people across the globe through handwritten letters.</h1><br>
                     <a href="{{ url_for('register') }}" id="register-button-1" class="hvr-grow-shadow register-buttons">Register now!</a>
                 </div>

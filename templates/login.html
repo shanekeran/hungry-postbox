@@ -7,15 +7,25 @@
                     <img src="./static/images/letters-and-ink.png" alt="stack of letters next to ink and quill" id="login-image">
                 </div>
                 <div class="col s12 l6">
-                    <form action="" id="login-form">
+                    <!-- flash messages displayed here-->
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="row">
+                                    <h4 class="flash">{{ message }}</h4>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <form id="login-form" method="POST" action="{{ url_for('login') }}">
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="login-username" type="text" required>
-                                <label for="login-username">Username</label>
+                                <input id="username" type="text" name="username" required>
+                                <label for="username">Username</label>
                             </div>
                             <div class="input-field col s12">
-                                <input id="login-password" type="password" required>
-                                <label for="login-password">Password</label>
+                                <input id="password" name="password" type="password" required>
+                                <label for="password">Password</label>
                             </div>
                             <div class="input-field col s12">
                                 <input type="submit" value="Log In" class="btn">
