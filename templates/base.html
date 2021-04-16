@@ -17,7 +17,7 @@
         <!-- Navigation Bar-->
         <nav class="teal lighten-2">
             <div class="nav-wrapper valign-wrapper">
-                <a href="#" class="brand-logo center"><img src="./static/images/hp-logo-tiny.png" alt="hungry postbox logo" id="nav-logo" class="hvr-rotate"></a>
+                <a href="#" class="brand-logo center"><img src="../static/images/hp-logo-tiny.png" alt="hungry postbox logo" id="nav-logo" class="hvr-rotate"></a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger hide-on-med-and-up"><i class="fas fa-bars"></i></a>
                 <!-- Left-side menu items-->
                 <ul class="hide-on-small-and-down nav-left">
@@ -26,9 +26,13 @@
                 </ul>
                 <!-- Right-side menu items-->
                 <ul class="hide-on-small-and-down nav-right">
-                    <li><a href="{{ url_for('register') }}" class="flow-text">Register</a></li>
-                    <!--<li><a href="{{ url_for('profile', username=session['user']) }}" class="flow-text">Profile</a></li>-->
-                    <li><a href="{{ url_for('login') }}" class="flow-text">Log In</a></li>   
+                    {% if session.user %}
+                        <li><a href="{{ url_for('profile', username=session['user']) }}" class="flow-text">Profile</a></li>
+                        <li><a href="{{ url_for('logout') }}" class="flow-text">Log Out</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('register') }}" class="flow-text">Register</a></li>
+                        <li><a href="{{ url_for('login') }}" class="flow-text">Log In</a></li>
+                    {% endif %}   
                 </ul>
             </div>
         </nav>
@@ -36,9 +40,13 @@
         <ul class="sidenav teal lighten-2" id="mobile-demo">
             <li><a href="{{ url_for('home_page') }}">Home</a></li>
             <li><a href="{{ url_for('home_page', _anchor='about') }}">About</a></li>
-            <li><a href="{{ url_for('register') }}">Register</a></li>
-            <!--<li><a href="{{ url_for('profile', username=session['user']) }}" class="flow-text">Profile</a></li>-->
-            <li><a href="{{ url_for('login') }}">Log In</a></li>
+            {% if session.user %}
+                <li><a href="{{ url_for('profile', username=session['user']) }}" class="flow-text">Profile</a></li>
+                <li><a href="{{ url_for('logout') }}" class="flow-text">Log Out</a></li>
+            {% else %}
+                <li><a href="{{ url_for('register') }}" class="flow-text">Register</a></li>
+                <li><a href="{{ url_for('login') }}" class="flow-text">Log In</a></li>
+            {% endif %}  
         </ul>
     </header>
 
