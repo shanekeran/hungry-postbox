@@ -438,6 +438,12 @@
     text-transform: none;
   }
 
+  /*----- Profile.html -----*/
+
+  #profile-picture{
+    width: 100%;
+  }
+
   /* Media Queries */
 
   @media only screen and (min-width: 601px) {

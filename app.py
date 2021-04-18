@@ -44,7 +44,8 @@ def register():
             "nationality": request.form.get("nationality"),
             "country": request.form.get("country"),
             "description": request.form.get("description"),
-            "looking-for": request.form.get("looking-for")
+            "looking-for": request.form.get("looking-for"),
+            "picture": request.form.get("picture")
         }
         mongo.db.members.insert_one(register)
 
@@ -60,7 +61,7 @@ def register():
 def login():
     if request.method == "POST":
         # Checks if the username is already in use
-        existing_member = mongo.db.users.find_one(
+        existing_member = mongo.db.members.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_member:
@@ -87,11 +88,14 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     #grab the session user's username from db
-    username = mongo.db.users.find_one(
+    username = mongo.db.members.find_one(
         {"username": session["user"]})["username"]
+    #Finds the users profile picture
+    picture = mongo.db.members.find_one(
+        {"username": session["user"]})["picture"]
     
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", username=username, picture=picture)
     
     return redirect(url_for("login.html"))
 
