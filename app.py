@@ -93,6 +93,7 @@ def profile(username):
     #Finds the users profile picture
     picture = mongo.db.members.find_one(
         {"username": session["user"]})["picture"]
+
     
     if session["user"]:
         return render_template("profile.html", username=username, picture=picture)

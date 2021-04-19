@@ -303,12 +303,14 @@
   }
 
   #default-picture{
-    width: 60%;
-    height: auto;
+    width: auto;
+    height: 100%;
+    position: relative;
+    left: 50%;
   }
 
   #picture-preview-container{
-    width: fit-content;
+    width: auto;
     height: 150px;
   }
 
@@ -328,6 +330,14 @@
 
   .customise{
     display: none;
+  }
+
+  #url-input, #url{
+    margin: 0;
+  }
+
+  #url{
+    visibility: hidden;
   }
 
   #indicator-container{

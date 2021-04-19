@@ -76,6 +76,9 @@
       // If a field is empty: valid is set to false to prevent user from advancing.
       if (formInputs[i].value == "" || formInputs[i].validity.tooShort) {
         valid = false;
+          if(formInputs[i].id =="picture"){
+            valid=true; // picture field is permitted to be empty if default picture is chosen.
+          }
       }
     }
     // If the valid status is true, the user can advance and a visual tick icon is displayed on progress bar.
@@ -101,22 +104,28 @@
   document.getElementById('customise-button').addEventListener('click', function() {
     var y = document.getElementsByClassName("customise")
     var x = document.getElementsByClassName("default")
+    var j = document.getElementById("url")
     for (var i=0;i<y.length;i+=1){
       y[i].style.display = 'block';
     }
     for (var i=0;i<x.length;i+=1){
       x[i].style.display = 'none';
-    }  
+    }
+    j.style.visibility = "visible" 
+    document.getElementById("picture").value = ""  
     });
   
   // Hides URL input when user reselects the option to use the default profile picture
   document.getElementById('default-button').addEventListener('click', function() {
     var y = document.getElementsByClassName("customise")
     var x = document.getElementsByClassName("default")
+    var j = document.getElementById("url")
     for (var i=0;i<y.length;i+=1){
       y[i].style.display = 'none';
     }
     for (var i=0;i<x.length;i+=1){
       x[i].style.display = 'block';
-    }  
+    }
+    j.style.visibility = "hidden" 
+    document.getElementById("picture").value = "https://mediastreet.ie/wp-content/uploads/2017/08/blank-profile-picture.png" 
     });
