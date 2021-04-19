@@ -95,3 +95,28 @@
     //... and adds the "active" class to the current step:
     indicator[n].className += " active fas fa-dot-circle";
   }
+
+
+  // Shows URL input when user selects that they wish to customise their profile picture
+  document.getElementById('customise-button').addEventListener('click', function() {
+    var y = document.getElementsByClassName("customise")
+    var x = document.getElementsByClassName("default")
+    for (var i=0;i<y.length;i+=1){
+      y[i].style.display = 'block';
+    }
+    for (var i=0;i<x.length;i+=1){
+      x[i].style.display = 'none';
+    }  
+    });
+  
+  // Hides URL input when user reselects the option to use the default profile picture
+  document.getElementById('default-button').addEventListener('click', function() {
+    var y = document.getElementsByClassName("customise")
+    var x = document.getElementsByClassName("default")
+    for (var i=0;i<y.length;i+=1){
+      y[i].style.display = 'none';
+    }
+    for (var i=0;i<x.length;i+=1){
+      x[i].style.display = 'block';
+    }  
+    });

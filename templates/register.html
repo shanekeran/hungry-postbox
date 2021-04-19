@@ -75,25 +75,38 @@
                 <div class="form-page">
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea id="description" name="description" class="materialize-textarea" maxlength="400" placeholder="Interests, hobbies, personality"></textarea>
+                            <textarea id="description" name="description" class="materialize-textarea" maxlength="400" 
+                                placeholder="Interests, hobbies, personality" required></textarea>
                             <label for="about-me">About Me</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea id="looking-for" name="looking-for" maxlength="200" class="materialize-textarea" placeholder="Detail the qualities of your ideal pen pal"></textarea>
+                            <textarea id="looking-for" name="looking-for" maxlength="200" class="materialize-textarea" 
+                                placeholder="Detail the qualities of your ideal pen pal" required></textarea>
                             <label for="looking-for">I'm looking for:</label>
                         </div>
                     </div>
                 </div>
-                <!-- Form page 3-->
+                <!-- Form page 4-->
                 <div class="form-page">
                     <div class="row">
+                        <div class="col s12" id="picture-preview-container">
+                            <img src="../static/images/hp-logo-tiny.png" alt="default profile picture" id="default-picture" class="default">
+                        </div>
+                    </div>
+                    <div class="row customise" id="url-input">
                         <div class="input-field col s12">
                             <input type="url" name="picture" id="picture">
                             <label for="picture">Profile Picture</label>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <span id="customise-button" class="default picture-button">Customise Profile picture</span>
+                            <span id="default-button" class="customise picture-button"> Use Default Profile picture</span>
+                        </div>
+                    </div>    
                 </div>
                 <!-- Prev/Next buttons -->
                 <div id="form-button-container">

@@ -302,6 +302,34 @@
     overflow-y: scroll;
   }
 
+  #default-picture{
+    width: 60%;
+    height: auto;
+  }
+
+  #picture-preview-container{
+    width: fit-content;
+    height: 150px;
+  }
+
+  .picture-button{
+    width: fit-content;
+    background-color: #4db6ac;
+    color: white;
+    padding: 5px 15px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .default{
+    display:block;
+  }
+
+  .customise{
+    display: none;
+  }
+
   #indicator-container{
     text-align:center;
   }
@@ -444,6 +472,7 @@
     width: 100%;
   }
 
+  
   /* Media Queries */
 
   @media only screen and (min-width: 601px) {
