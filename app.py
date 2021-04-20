@@ -44,7 +44,7 @@ def register():
             "nationality": request.form.get("nationality"),
             "country": request.form.get("country"),
             "description": request.form.get("description"),
-            "looking-for": request.form.get("looking-for"),
+            "looking_for": request.form.get("looking_for"),
             "picture": request.form.get("picture")
         }
         mongo.db.members.insert_one(register)
@@ -93,10 +93,13 @@ def profile(username):
     #Finds the users profile picture
     picture = mongo.db.members.find_one(
         {"username": session["user"]})["picture"]
+    #User
+    user_profile = mongo.db.members.find_one({"username": session["user"]})
 
     
     if session["user"]:
-        return render_template("profile.html", username=username, picture=picture)
+        return render_template("profile.html", username=username, picture=picture,
+                                user_profile=user_profile)
     
     return redirect(url_for("login.html"))
 

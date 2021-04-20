@@ -1,17 +1,63 @@
 {% extends "base.html" %}
 {% block content %}
     <section>
-        <div class="row">
-            <div class="col s12">
+        <div class="row" id="heading-row">
+            <div class="col s4" id="profile-heading">
                 <h1>Your Profile</h1>
             </div>
         </div>
-        <div class="row">
-            <div class="col s4">
-                <img src="{{ picture }}" alt="profile picture" id="profile-picture">
+        <div class="row" id="profile-row">
+            <div class="col s4 center-align">
+                <div class="row">
+                    <img src="{{ picture }}" alt="profile picture" id="profile-picture">
+                </div>
+                <div class="row center-align">
+                    <i class="fas fa-user-tag"></i><br>
+                    {{ user_profile.username }}
+                </div>
+                <div class="row center-align">
+                    <i class="fas fa-home"></i><br>
+                    {{ user_profile.country }}
+                </div>
+                <div class="row center-align">
+                    <i class="fas fa-envelope"></i><br>
+                    {{ user_profile.email }}
+                </div>
             </div>
             <div class="col s8">
-
+                <fieldset>
+                    <legend>Personal</legend>
+                    <div class="row">
+                        <div class="col s4">
+                            Age: {{ user_profile.dob }}
+                        </div>
+                        <div class="col s4">
+                            Gender: {{ user_profile.gender}}
+                        </div>
+                        <div class="col s4">
+                            Nationality: {{ user_profile.nationality }}
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Description</legend>
+                    <div class="col s6">
+                        <h3>About me</h3>
+                        <p> {{ user_profile.description }}</p>
+                    </div>
+                    <div class="col s6">
+                        <h3>I'm looking for:</h3>
+                        <p> {{ user_profile.looking_for }}</p>
+                    </div>
+                </fieldset>
+                <div class="row">
+                    <div class="col s6 center-align">
+                        Edit Profile
+                    </div>
+                    <div class="col s6 center-align">
+                        Delete Profile
+                    </div>
+                </div>
             </div>
         </div>
     </section>

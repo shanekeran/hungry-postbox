@@ -478,8 +478,40 @@
 
   /*----- Profile.html -----*/
 
+  #heading-row{
+    display: flex;
+  }
+
+  #profile-heading{
+    margin: 20px auto;
+    text-align: center;
+    background-color: #4db6ac;
+    color: white;
+  }
+
+  #profile-heading h1{
+    margin: 0;
+    padding: 10px;
+  }
+
+  #profile-row{
+    background-color: #4db6ac;
+    color: white;
+    padding: 20px 0;
+  }
+
   #profile-picture{
-    width: 100%;
+    width: 60%;
+    border-radius: 50%;
+  }
+
+  fieldset{
+    border-color: #545454;
+    border-style: dotted;
+  }
+
+  fieldset h3{
+    font-size: 18px;
   }
 
   
