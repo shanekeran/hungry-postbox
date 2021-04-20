@@ -480,6 +480,7 @@
 
   #heading-row{
     display: flex;
+    margin-bottom: 0;
   }
 
   #profile-heading{
@@ -492,22 +493,54 @@
   #profile-heading h1{
     margin: 0;
     padding: 10px;
+    font-size: 30px;
   }
 
   #profile-row{
     background-color: #4db6ac;
     color: white;
     padding: 20px 0;
+    height: auto;
+  }
+
+  #profile-right, #profile-left{
+    position: relative;
+    height: 100%;
+  }
+
+  #profile-buttons{
+    height: 80px;
+  }
+
+  #profile-buttons div{
+    margin-top: 40px;
+  }
+
+  #profile-buttons span{
+    padding: 10px 30px;
+    border: 1px solid #545454;
   }
 
   #profile-picture{
-    width: 60%;
+    width: 50%;
     border-radius: 50%;
+  }
+
+  #description{
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-bottom: 0;
   }
 
   fieldset{
     border-color: #545454;
     border-style: dotted;
+    height: 100%;
+    margin: 0 25px;
+  }
+
+  fieldset div{
+    text-align: center;
   }
 
   fieldset h3{
@@ -592,6 +625,20 @@
     #complete-form{
       padding: 3px 8px;
       font-size: 18px;
+    }
+
+    #profile-left>div{
+      height: 280px; /*change in MQ */
+    }
+  
+    #profile-left>div>div{
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    #profile-picture{
+      width: 60%;
     }
 
   }
@@ -699,6 +746,40 @@
 
     #login-form{
       max-width: 420px;
+    }
+
+    #profile-heading h1{
+      font-size: 50px;
+    }
+
+    #profile-row{
+      height: 500px;
+    }
+
+    #profile-left>div{
+      height: auto;
+    }
+  
+    #profile-left>div>div{
+      position: static;
+      transform: translateY(0);
+    }
+
+    #profile-left .left-align{ /* change materialize alignment on larger screens */
+      text-align: center;
+    }
+
+    #profile-picture{
+      width: 55%;
+    }
+
+    #profile-buttons{
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100px;
     }
 
   }

@@ -1,61 +1,100 @@
 {% extends "base.html" %}
 {% block content %}
     <section>
+        <!-- Profile page heading-->
         <div class="row" id="heading-row">
             <div class="col s4" id="profile-heading">
                 <h1>Your Profile</h1>
             </div>
         </div>
+        <!-- User Profile-->
         <div class="row" id="profile-row">
-            <div class="col s4 center-align">
+            <div class="col s12 l4 center-align" id="profile-left">
                 <div class="row">
-                    <img src="{{ picture }}" alt="profile picture" id="profile-picture">
+                    <!-- Profile Picture -->
+                    <div class="col s12 m6 l12">
+                        <img src="{{ user_profile.picture }}" alt="profile picture" id="profile-picture">   
+                    </div>
+                    <!-- User details -->
+                    <div class="col s12 m6 l12">
+                        <div class="row center-align">
+                            <!-- Username -->
+                            <div class="col s4 l12">
+                                <i class="fas fa-user-tag"></i>
+                            </div>
+                            <div class="col s8 l12 left-align">
+                                {{ user_profile.username }}
+                            </div>
+                        </div>
+                        <!-- Location -->
+                        <div class="row center-align">
+                            <div class="col s4 l12">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="col s8 l12 left-align">
+                                {{ user_profile.country }}
+                            </div>
+                        </div>
+                        <!-- Email address -->
+                        <div class="row center-align">
+                            <div class="col s4 l12">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="col s8 l12 left-align">
+                                {{ user_profile.email }}
+                            </div>
+                        </div>
+                    </div>    
                 </div>
-                <div class="row center-align">
-                    <i class="fas fa-user-tag"></i><br>
-                    {{ user_profile.username }}
-                </div>
-                <div class="row center-align">
-                    <i class="fas fa-home"></i><br>
-                    {{ user_profile.country }}
-                </div>
-                <div class="row center-align">
-                    <i class="fas fa-envelope"></i><br>
-                    {{ user_profile.email }}
-                </div>
+
             </div>
-            <div class="col s8">
-                <fieldset>
-                    <legend>Personal</legend>
-                    <div class="row">
-                        <div class="col s4">
-                            Age: {{ user_profile.dob }}
+            <div class="col s12 l8" id="profile-right">
+                <div class="row" id="personal">
+                    <!-- Personal Information (Age, Gender, Nationality)-->
+                    <fieldset>
+                        <legend>Personal</legend>
+                        <div class="row">
+                            <!-- Age -->
+                            <div class="col s4">
+                                <h3>Age</h3>
+                                {{ user_profile.dob }}
+                            </div>
+                            <!-- Gender -->
+                            <div class="col s4">
+                                <h3>Gender</h3>
+                                {{ user_profile.gender}}
+                            </div>
+                            <!-- Nationality -->
+                            <div class="col s4">
+                                <h3>Nationality</h3>
+                                {{ user_profile.nationality }}
+                            </div>
                         </div>
-                        <div class="col s4">
-                            Gender: {{ user_profile.gender}}
+                    </fieldset>
+                </div>
+                <div class="row" id="description">
+                    <!-- Further Information (About me, Looking for)-->    
+                    <fieldset>
+                        <legend>Description</legend>
+                        <!-- About me-->
+                        <div class="col s6">
+                            <h3>About me</h3>
+                            <p> {{ user_profile.description }}</p>
                         </div>
-                        <div class="col s4">
-                            Nationality: {{ user_profile.nationality }}
+                        <!-- Looking for-->
+                        <div class="col s6">
+                            <h3>I'm looking for:</h3>
+                            <p> {{ user_profile.looking_for }}</p>
                         </div>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Description</legend>
-                    <div class="col s6">
-                        <h3>About me</h3>
-                        <p> {{ user_profile.description }}</p>
-                    </div>
-                    <div class="col s6">
-                        <h3>I'm looking for:</h3>
-                        <p> {{ user_profile.looking_for }}</p>
-                    </div>
-                </fieldset>
-                <div class="row">
+                    </fieldset>
+                </div>
+                <!-- Edit and Delete profile buttons-->    
+                <div class="row" id="profile-buttons">
                     <div class="col s6 center-align">
-                        Edit Profile
+                        <span class="blue darken-2">Edit Profile</span>
                     </div>
                     <div class="col s6 center-align">
-                        Delete Profile
+                        <span class=" red lighten-1">Delete Profile</span>
                     </div>
                 </div>
             </div>
