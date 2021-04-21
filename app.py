@@ -30,8 +30,16 @@ def register():
         # Checks if the username is already in use
         existing_member = mongo.db.members.find_one(
             {"username": request.form.get("username").lower()})
+
+        existing_email = mongo.db.members.find_one(
+            {"email": request.form.get("email")})
+
         if existing_member:
             flash("Username already exists")
+            return redirect(url_for("register"))
+        
+        if existing_email:
+            flash("Email already in use")
             return redirect(url_for("register"))
 
         # If username is available, this creates an account in the db.
@@ -81,6 +89,7 @@ def login():
             # Username not found
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
+
 
     return render_template("login.html")
 
