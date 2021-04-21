@@ -19,29 +19,29 @@
                     <div class="col s12 m6 l12">
                         <div class="row center-align">
                             <!-- Username -->
-                            <div class="col s4 l12">
+                            <div class="col s4 l5 right-align">
                                 <i class="fas fa-user-tag"></i>
                             </div>
-                            <div class="col s8 l12 left-align">
-                                {{ user_profile.username }}
+                            <div class="col s8 l7 left-align">
+                                <span>{{ user_profile.username }}</span>
                             </div>
                         </div>
                         <!-- Location -->
                         <div class="row center-align">
-                            <div class="col s4 l12">
+                            <div class="col s4 l5 right-align">
                                 <i class="fas fa-home"></i>
                             </div>
-                            <div class="col s8 l12 left-align">
-                                {{ user_profile.country }}
+                            <div class="col s8 l7 left-align">
+                                <span>{{ user_profile.country }}</span>
                             </div>
                         </div>
                         <!-- Email address -->
                         <div class="row center-align">
-                            <div class="col s4 l12">
+                            <div class="col s4 l5 right-align">
                                 <i class="fas fa-envelope"></i>
                             </div>
-                            <div class="col s8 l12 left-align">
-                                {{ user_profile.email }}
+                            <div class="col s8 l7 left-align">
+                                <span>{{ user_profile.email }}</span>
                             </div>
                         </div>
                     </div>    
@@ -57,17 +57,17 @@
                             <!-- Age -->
                             <div class="col s12 m4">
                                 <h3>Age</h3>
-                                {{ user_profile.dob }}
+                                <span>{{ user_profile.dob }}</span>
                             </div>
                             <!-- Gender -->
                             <div class="col s12 m4">
                                 <h3>Gender</h3>
-                                {{ user_profile.gender}}
+                                <span>{{ user_profile.gender}}</span>
                             </div>
                             <!-- Nationality -->
                             <div class="col s12 m4">
                                 <h3>Nationality</h3>
-                                {{ user_profile.nationality }}
+                                <span>{{ user_profile.nationality }}</span>
                             </div>
                         </div>
                     </fieldset>

@@ -489,6 +489,7 @@
     background-color: #4db6ac;
     color: white;
     padding: 0;
+    border-radius: 5px;
   }
 
   #profile-heading h1{
@@ -509,6 +510,10 @@
     height: 100%;
   }
 
+  #personal span, #description p{
+    color: #545454;
+  }
+
   #profile-buttons{
     height: 80px;
   }
@@ -520,6 +525,7 @@
   #profile-buttons span{
     padding: 10px 30px;
     border: 1px solid #545454;
+    border-radius: 30px;
   }
 
   #profile-picture{
@@ -533,6 +539,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     margin-bottom: 0;
+    word-wrap: break-word;
   }
 
   fieldset{
@@ -549,6 +556,7 @@
 
   fieldset h3{
     font-size: 16px;
+    color: #545454;
   }
 
   legend {
@@ -639,6 +647,18 @@
       font-size: 18px;
     }
 
+    #profile-heading h1{
+      font-size: 25px;
+    }
+
+    #profile-left i{
+      font-size: 24px;
+    }
+
+    #profile-row p, #profile-row span {
+      font-size: 16px;
+    }
+
     #profile-left>div{
       height: 280px; /*change in MQ */
     }
@@ -651,6 +671,10 @@
 
     #profile-picture{
       width: 60%;
+    }
+
+    fieldset h3{
+      font-size: 20px;
     }
 
   }
@@ -764,8 +788,12 @@
       font-size: 50px;
     }
 
-    #profile-row{
-      height: 500px;
+    #profile-row p, #profile-row span {
+      font-size: 16px;
+    }
+
+    #profile-left i{
+      font-size: 20px;
     }
 
     #profile-left>div{
@@ -777,22 +805,9 @@
       transform: translateY(0);
     }
 
-    #profile-left .left-align{ /* change materialize alignment on larger screens */
-      text-align: center;
-    }
-
     #profile-picture{
       width: 55%;
       max-width: 300px;
-    }
-
-    #profile-buttons{
-      position: absolute;
-      width: 100%;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      height: 100px;
     }
 
   }
@@ -808,8 +823,8 @@
       min-height: 400px;
     }
 
-    #profile-row{
-      height: 600px;
+    fieldset h3{
+      font-size: 23px;
     }
 
   }
