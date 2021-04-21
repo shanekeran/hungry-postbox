@@ -15,7 +15,9 @@
     let registrationSection = document.getElementById("registration")
       var elems = document.querySelectorAll('.datepicker');
       var instances = M.Datepicker.init(elems, {format: 'dd/mm/yyyy',
-                                                container: registrationSection});
+                                                container: registrationSection, maxDate: new Date('01/01/2010'),
+                                                minDate: new Date('01/01/1930'), defaultDate: new Date('01/01/2000'),
+                                                yearRange: [1950, 2008]});
     });
   
   // Function to prevent register form returning inside envelope container after hover
