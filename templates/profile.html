@@ -55,17 +55,17 @@
                         <legend>Personal</legend>
                         <div class="row">
                             <!-- Age -->
-                            <div class="col s4">
+                            <div class="col s12 m4">
                                 <h3>Age</h3>
                                 {{ user_profile.dob }}
                             </div>
                             <!-- Gender -->
-                            <div class="col s4">
+                            <div class="col s12 m4">
                                 <h3>Gender</h3>
                                 {{ user_profile.gender}}
                             </div>
                             <!-- Nationality -->
-                            <div class="col s4">
+                            <div class="col s12 m4">
                                 <h3>Nationality</h3>
                                 {{ user_profile.nationality }}
                             </div>
@@ -77,12 +77,12 @@
                     <fieldset>
                         <legend>Description</legend>
                         <!-- About me-->
-                        <div class="col s6">
+                        <div class="col s12 m6">
                             <h3>About me</h3>
                             <p> {{ user_profile.description }}</p>
                         </div>
                         <!-- Looking for-->
-                        <div class="col s6">
+                        <div class="col s12 m6">
                             <h3>I'm looking for:</h3>
                             <p> {{ user_profile.looking_for }}</p>
                         </div>
@@ -90,10 +90,10 @@
                 </div>
                 <!-- Edit and Delete profile buttons-->    
                 <div class="row" id="profile-buttons">
-                    <div class="col s6 center-align">
+                    <div class="col s12 m6 center-align">
                         <span class="blue darken-2">Edit Profile</span>
                     </div>
-                    <div class="col s6 center-align">
+                    <div class="col s12 m6 center-align">
                         <span class=" red lighten-1">Delete Profile</span>
                     </div>
                 </div>
