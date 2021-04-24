@@ -68,20 +68,30 @@ def register():
 @app.route("/edit_profile/<member_id>", methods=["GET", "POST"])
 def edit_profile(member_id):
     if request.method == "POST":
-
+        #checks for existing username on db
         existing_member = mongo.db.members.find_one(
             {"username": request.form.get("username").lower()})
-
+        #checks for existing email on db
         existing_email = mongo.db.members.find_one(
             {"email": request.form.get("email")})
-
-        if existing_member:
-            flash("Username already exists")
-            return redirect(url_for("register"))
         
+        # Flash message if user inputs a username that's already taken
+        # Flash message doesn't show if user reinputs their current username
+        if existing_member:
+            current_username = mongo.db.members.find_one(
+                {"username": session["user"]})
+            if existing_member != current_username:
+                flash("Username already in use")
+                return redirect(url_for("edit_profile"))
+
+        # Flash message if user inputs an email address that's already taken
+        # Flash message doesn't show if user reinputs their current email
         if existing_email:
-            flash("Email already in use")
-            return redirect(url_for("register"))
+            current_email = mongo.db.members.find_one(
+                {"username": session["user"]})["email"]
+            if request.form.get("email") != current_email:
+                flash("Email already in use")
+                return redirect(url_for("home_page"))
 
         # If username is available, this creates an account in the db.
         register = {
