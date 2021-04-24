@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% block content %} 
+
+<section id="registration">
+    <!-- flash messages displayed here-->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="row">
+                    <h4 class="flash">{{ message }}</h4>
+                </div>
+            {% endfor %}
+         {% endif %}
+    {% endwith %}
+    <div class="envelope" onmouseover="remainOpen()"> <!-- form container-->
+        <div class="back"></div> <!-- open envelope flap shape-->
+        <div class="row"> 
+            <!--Multi-step form (base code sourced from w3schools and modified(see README))-->
+            <form id="regForm" class="letter" method="POST" action="{{ url_for('edit_profile', member_id=member._id) }}">
+                <!-- Form page 1-->
+                <div class="form-page">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="JohnDoe123" id="username" name="username" type="text" class="validate"
+                                minlength="3" maxlength="16" pattern="^[a-zA-Z0-9]{3,15}$" required>
+                            <label for="username">Username</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="johndoe@email.com" id="email" name="email" type="email" class="validate" required>
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="Must be between 8-20 characters" id="password" name="password" type="password" class="validate"
+                             minlength="5" maxlength="20" required>
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- Form page 2-->
+                <div class="form-page">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="dob" name="dob" type="text" class="datepicker" required>
+                            <label for="dob">Date of Birth</label>
+                        </div>
+                        <div class="col s6" id="gender-input">
+                            <label for="male">
+                                <input name="gender" type="radio" value="m" id="male" checked>
+                                <span>Male</span>
+                            </label>
+                            <label for="female">
+                                <input name="gender" type="radio" value="f" id="female">
+                                <span>Female</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="Irish" minlength="3" maxlength="20" id="nationality" name="nationality" type="text" class="validate" required>
+                            <label for="nationality">Nationality</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="Ireland" minlength="3" maxlength="20" id="country" name="country" type="text" class="validate" required>
+                            <label for="country">Country of residence</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- Form page 3-->
+                <div class="form-page">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="description" name="description" class="materialize-textarea" maxlength="400" 
+                                placeholder="Interests, hobbies, personality" required></textarea>
+                            <label for="about-me">About Me</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="looking_for" name="looking_for" maxlength="200" class="materialize-textarea" 
+                                placeholder="Detail the qualities of your ideal pen pal" required></textarea>
+                            <label for="looking_for">I'm looking for:</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- Form page 4-->
+                <div class="form-page">
+                    <div class="row">
+                        <div class="col s12" id="picture-preview-container">
+                            <img src="../static/images/hp-logo-tiny.png" alt="default profile picture" id="default-picture" class="default">
+                        </div>
+                    </div>
+                    <div class="row" id="url-input">
+                        <div class="input-field col s12" id="url">
+                            <input type="url" name="picture" id="picture" 
+                                value="https://mediastreet.ie/wp-content/uploads/2017/08/blank-profile-picture.png">
+                            <label for="picture">Profile Picture</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <span id="customise-button" class="default picture-button">Customise Profile picture</span>
+                            <span id="default-button" class="customise picture-button">Use Default Profile picture</span>
+                        </div>
+                    </div>    
+                </div>
+                <!-- Prev/Next buttons -->
+                <div id="form-button-container">
+                      <button type="button" id="prevBtn" onclick="nextPrev(-1)"><i class="fas fa-chevron-circle-left"></i></button>
+                      <button type="button" id="nextBtn" onclick="nextPrev(1)"><i class="fas fa-chevron-circle-right"></i></button>
+                  </div>
+                <!-- Indicator icons -->
+                <div id="indicator-container">
+                    <i class="indicator fas fa-circle"></i>
+                    <i class="indicator fas fa-circle"></i>
+                    <i class="indicator fas fa-circle"></i>
+                    <i class="indicator fas fa-circle"></i>
+                  </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %} 

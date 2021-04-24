@@ -91,10 +91,12 @@
                 <!-- Edit and Delete profile buttons-->    
                 <div class="row" id="profile-buttons">
                     <div class="col s12 m6 center-align">
-                        <span class="blue darken-2">Edit Profile</span>
+                        <a href="{{ url_for('edit_profile', member_id = user_profile._id) }}" class="blue darken-2" id="edit-profile">Edit Profile</a>
                     </div>
                     <div class="col s12 m6 center-align">
-                        <span class=" red lighten-1">Delete Profile</span>
+                        <a href="#" class="red lighten-1" id="delete-profile">
+                            Delete Acccount
+                        </a>
                     </div>
                 </div>
             </div>

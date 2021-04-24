@@ -65,6 +65,48 @@ def register():
     return render_template("register.html")
 
 
+@app.route("/edit_profile/<member_id>", methods=["GET", "POST"])
+def edit_profile(member_id):
+    if request.method == "POST":
+
+        existing_member = mongo.db.members.find_one(
+            {"username": request.form.get("username").lower()})
+
+        existing_email = mongo.db.members.find_one(
+            {"email": request.form.get("email")})
+
+        if existing_member:
+            flash("Username already exists")
+            return redirect(url_for("register"))
+        
+        if existing_email:
+            flash("Email already in use")
+            return redirect(url_for("register"))
+
+        # If username is available, this creates an account in the db.
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password")),
+            "email": request.form.get("email").lower(),
+            "dob": request.form.get("dob"),
+            "gender": request.form.get("gender"),
+            "nationality": request.form.get("nationality"),
+            "country": request.form.get("country"),
+            "description": request.form.get("description"),
+            "looking_for": request.form.get("looking_for"),
+            "picture": request.form.get("picture")
+        }
+
+        # Changes the session cookie to the new username, if it was edited.
+        session["user"] = request.form.get("username").lower()
+
+        mongo.db.members.update({"_id": ObjectId(member_id)}, register)
+        return redirect(url_for("home_page", username=session["user"]))
+
+    member = mongo.db.members.find_one({"_id": ObjectId(member_id)})
+    return render_template("edit_profile.html", member=member)
+
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
