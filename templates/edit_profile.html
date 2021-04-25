@@ -22,13 +22,14 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <input placeholder="JohnDoe123" id="username" name="username" type="text" class="validate"
-                                minlength="3" maxlength="16" pattern="^[a-zA-Z0-9]{3,15}$" required>
+                                minlength="3" maxlength="16" pattern="^[a-zA-Z0-9]{3,15}$" value="{{ member.username }}" required>
                             <label for="username">Username</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input placeholder="johndoe@email.com" id="email" name="email" type="email" class="validate" required>
+                            <input placeholder="johndoe@email.com" id="email" name="email" type="email" class="validate"
+                            value="{{ member.email }}" required>
                             <label for="email">Email</label>
                         </div>
                     </div>
@@ -44,7 +45,7 @@
                 <div class="form-page">
                     <div class="row">
                         <div class="input-field col s6">
-                            <input id="dob" name="dob" type="text" class="datepicker" required>
+                            <input id="dob" name="dob" type="text" class="datepicker" value="{{ member.dob }}" required>
                             <label for="dob">Date of Birth</label>
                         </div>
                         <div class="col s6" id="gender-input">
@@ -60,13 +61,15 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input placeholder="Irish" minlength="3" maxlength="20" id="nationality" name="nationality" type="text" class="validate" required>
+                            <input placeholder="Irish" minlength="3" maxlength="20" id="nationality" name="nationality" type="text" 
+                            class="validate" value="{{ member.nationality }}" required>
                             <label for="nationality">Nationality</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input placeholder="Ireland" minlength="3" maxlength="20" id="country" name="country" type="text" class="validate" required>
+                            <input placeholder="Ireland" minlength="3" maxlength="20" id="country" name="country" type="text" class="validate"
+                            value="{{ member.country }}" required>
                             <label for="country">Country of residence</label>
                         </div>
                     </div>
@@ -76,14 +79,18 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <textarea id="description" name="description" class="materialize-textarea" maxlength="400" 
-                                placeholder="Interests, hobbies, personality" required></textarea>
-                            <label for="about-me">About Me</label>
+                                placeholder="Interests, hobbies, personality" required>
+                                {{ member.description }}
+                            </textarea>
+                            <label for="description">About Me</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <textarea id="looking_for" name="looking_for" maxlength="200" class="materialize-textarea" 
-                                placeholder="Detail the qualities of your ideal pen pal" required></textarea>
+                                placeholder="Detail the qualities of your ideal pen pal" required>
+                                {{ member.looking_for }}
+                            </textarea>
                             <label for="looking_for">I'm looking for:</label>
                         </div>
                     </div>
@@ -97,8 +104,7 @@
                     </div>
                     <div class="row" id="url-input">
                         <div class="input-field col s12" id="url">
-                            <input type="url" name="picture" id="picture" 
-                                value="https://mediastreet.ie/wp-content/uploads/2017/08/blank-profile-picture.png">
+                            <input type="url" name="picture" id="picture">
                             <label for="picture">Profile Picture</label>
                         </div>
                     </div>

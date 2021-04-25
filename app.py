@@ -109,11 +109,15 @@ def edit_profile(member_id):
 
         # Changes the session cookie to the new username, if it was edited.
         session["user"] = request.form.get("username").lower()
-
+        # Updates user profile in db
         mongo.db.members.update({"_id": ObjectId(member_id)}, register)
-        return redirect(url_for("home_page", username=session["user"]))
+        user_profile = mongo.db.members.find_one({"username": session["user"]})
+        return redirect(url_for("home_page", username=session["user"],
+                                user_profile=user_profile))
 
     member = mongo.db.members.find_one({"_id": ObjectId(member_id)})
+    user_profile = mongo.db.members.find_one({"username": session["user"]})
+    
     return render_template("edit_profile.html", member=member)
 
 
@@ -129,7 +133,7 @@ def login():
             if check_password_hash(
                 existing_member['password'], request.form.get('password')):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(request.form.get("username")))
+                #  flash("Welcome, {}".format(request.form.get("username")))
                 return redirect(url_for(
                     "profile", username=session["user"]))
             else:
@@ -160,6 +164,14 @@ def profile(username):
                                 user_profile=user_profile)
     
     return redirect(url_for("login.html"))
+
+
+@app.route("/delete_account/<member_id>")
+def delete_account(member_id):
+    mongo.db.members.remove({"_id": ObjectId(member_id)})
+    session.clear()  # logs out user
+    flash("Account Successfully Deleted")
+    return redirect(url_for("home_page"))
 
 
 @app.route("/logout")
