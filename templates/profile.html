@@ -13,7 +13,11 @@
                 <div class="row">
                     <!-- Profile Picture -->
                     <div class="col s12 m6 l12">
-                        <img src="{{ user_profile.picture }}" alt="profile picture" id="profile-picture">   
+                        {% if user_profile.picture == "" %} <!-- Adds default image if member picture is blank-->
+                            <img src="https://mediastreet.ie/wp-content/uploads/2017/08/blank-profile-picture.png" class="profile-picture">
+                        {% else %} <!-- If member has uploaded a picture then that will be displayed-->
+                            <img src="{{ user_profile.picture }}" alt="profile picture" class="profile-picture">  
+                        {% endif %}  
                     </div>
                     <!-- User details -->
                     <div class="col s12 m6 l12">
@@ -90,14 +94,14 @@
                 </div>
                 <!-- Edit and Delete profile buttons-->    
                 <div class="row" id="profile-buttons">
-                    {% if session.user == user_profile._id %}
+                    {% if session.user == user_profile.username %}
                         <div class="col s12 m6 center-align">
-                            <a href="{{ url_for('edit_profile', member_id = user_profile._id) }}" class="blue darken-2" id="edit-profile">
+                            <a href="{{ url_for('edit_profile', member_id = user_profile._id) }}" class="blue darken-2 white-text" id="edit-profile">
                                 Edit Profile
                             </a>
                         </div>
                         <div class="col s12 m6 center-align">
-                            <a href="{{ url_for('delete_account', member_id = user_profile._id) }}" class="red lighten-1" id="delete-profile">
+                            <a href="{{ url_for('delete_account', member_id = user_profile._id) }}" class="red lighten-1 white-text" id="delete-profile">
                                 Delete Acccount
                             </a>
                         </div>

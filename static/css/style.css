@@ -528,7 +528,7 @@
     border-radius: 30px;
   }
 
-  #profile-picture{
+  .profile-picture{
     width: 50%;
     max-width: 250px;
     border: 6px solid #78cec6;
@@ -572,6 +572,7 @@
   #member-row{
     height: fit-content;
     overflow: auto;
+    background-color: #4db6ac;
   }
 
   #card-container{
@@ -579,13 +580,24 @@
     flex-wrap: wrap;
   }
 
+  #card-container>div{
+    margin-left: 0;
+  }
+
   #card-container img{
     height: 250px;
   }
 
   .card{
-    height: 500px;
+    height: fit-content;
+    width: 75vw;
+    max-width: 320px;
+    min-width: 250px;
+    margin: 30px auto;
     overflow-x: auto;
+    border-style: outset;
+    border-color: #b4b4b4;
+    box-shadow: 3px 2px 5px #000000ad;
   }
 
   
@@ -707,12 +719,17 @@
       transform: translateY(-50%);
     }
 
-    #profile-picture{
+    .profile-picture{
       width: 60%;
     }
 
     fieldset h3{
       font-size: 20px;
+    }
+
+    .card{
+      width: auto;
+      max-width: 300px;
     }
 
   }
@@ -851,7 +868,7 @@
       transform: translateY(0);
     }
 
-    #profile-picture{
+    .profile-picture{
       width: 55%;
       max-width: 300px;
     }
