@@ -184,7 +184,8 @@ def logout():
 
 @app.route("/members")
 def members():
-    return render_template("members.html")
+    members = list(mongo.db.members.find())
+    return render_template("members.html", members=members)
 
 
 if __name__ == "__main__":
