@@ -579,6 +579,23 @@
       margin-left: 15px;
     }
 
+    nav ul{
+      height: inherit;
+    }
+
+    nav ul li{
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    nav ul a {
+      padding: 0;
+    }
+
+    .nav-text{
+      font-size: 14px;
+    }
+
     #home-logo{
       width: 35%;
       max-width: 350px;
@@ -683,6 +700,14 @@
 
     .nav-left, .nav-right{
       margin: 0px;
+    }
+
+    nav ul a {
+      padding: 0 15px;
+    }
+
+    .nav-text{
+      font-size: 17px;
     }
 
     #home{
@@ -814,8 +839,8 @@
 
   @media only screen and (min-width: 1200px){
 
-    nav ul li {
-        padding: 0 10%;
+    .nav-text{
+      font-size: 19px;
     }
 
     #home{
