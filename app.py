@@ -188,6 +188,12 @@ def members():
     return render_template("members.html", members=members)
 
 
+@app.route("/member_profile/<member>")
+def member_profile(member):
+    user_profile = mongo.db.members.find_one({"username": member})
+    return render_template("profile.html", user_profile=user_profile)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
