@@ -600,6 +600,16 @@
     box-shadow: 3px 2px 5px #000000ad;
   }
 
+  .btn-floating{
+    width: 55px;
+    height: 55px;
+    line-height: 72px;
+  }
+
+  .btn-floating i{
+    font-size: 39px;
+  }
+
   #pagination-container{
     text-align: center;
   }

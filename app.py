@@ -23,7 +23,7 @@ mongo = PyMongo(app)
 # Pagination functions.
 # Credit https://github.com/Edb83/self-isolution/blob/master/app.py
 
-PER_PAGE = 6  # Maximum 6 members displayed per page
+PER_PAGE = 12  # Maximum 12 members displayed per page
 
 
 def paginated(members):
@@ -209,7 +209,7 @@ def logout():
 @app.route("/members")
 def members():
 
-    members = list(mongo.db.members.find())
+    members = list(mongo.db.members.find().sort('_id', -1))
     members_paginated = paginated(members)
     pagination = pagination_args(members)
     return render_template("members.html", members=members_paginated,
