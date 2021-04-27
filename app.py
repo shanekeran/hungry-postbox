@@ -5,17 +5,41 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_paginate import Pagination, get_page_args
 if os.path.exists("env.py"):
     import env
 
 
 app = Flask(__name__)
+users = list(range(100))
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+
+
+# Pagination functions.
+# Credit https://github.com/Edb83/self-isolution/blob/master/app.py
+
+PER_PAGE = 6  # Maximum 6 members displayed per page
+
+
+def paginated(members):
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page')
+    offset = page * PER_PAGE - PER_PAGE
+
+    return members[offset: offset + PER_PAGE]
+
+
+def pagination_args(members):
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page')
+    total = len(members)
+
+    return Pagination(page=page, per_page=PER_PAGE, total=total)
 
 
 @app.route("/")
@@ -184,8 +208,12 @@ def logout():
 
 @app.route("/members")
 def members():
+
     members = list(mongo.db.members.find())
-    return render_template("members.html", members=members)
+    members_paginated = paginated(members)
+    pagination = pagination_args(members)
+    return render_template("members.html", members=members_paginated,
+                           pagination=pagination)
 
 
 @app.route("/member_profile/<member>")
