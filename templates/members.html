@@ -13,7 +13,7 @@
                         <div class="card">
                             <div class="card-image">
                             {% if member.picture == "" %} <!-- Adds default image if member picture is blank-->
-                                <img src="https://mediastreet.ie/wp-content/uploads/2017/08/blank-profile-picture.png">
+                                <img src="../static/images/default-profile-pic.png">
                             {% else %} <!-- If member has uploaded a picture then that will be displayed-->
                                 <img src="{{ member.picture }}">
                             {% endif %}
@@ -27,7 +27,7 @@
                     </div>
                 {% endfor %}
             </div>
-            <div class="col s12">
+            <div class="col s12" id="pagination-container">
                 {{ pagination.links }}
             </div>
         </div>

@@ -14,7 +14,7 @@
                     <!-- Profile Picture -->
                     <div class="col s12 m6 l12">
                         {% if user_profile.picture == "" %} <!-- Adds default image if member picture is blank-->
-                            <img src="https://mediastreet.ie/wp-content/uploads/2017/08/blank-profile-picture.png" class="profile-picture">
+                            <img src="../static/images/default-profile-pic.png" class="profile-picture">
                         {% else %} <!-- If member has uploaded a picture then that will be displayed-->
                             <img src="{{ user_profile.picture }}" alt="profile picture" class="profile-picture">  
                         {% endif %}  

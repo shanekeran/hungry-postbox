@@ -600,6 +600,21 @@
     box-shadow: 3px 2px 5px #000000ad;
   }
 
+  #pagination-container{
+    text-align: center;
+  }
+
+  .pagination li{
+    height: auto;
+    font-size: 30px;
+    line-height: 1.3;
+    margin: 0 20px;
+  }
+
+  .pagination li a {
+    font-size: inherit;
+  }
+
   
   /* Media Queries */
 

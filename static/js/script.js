@@ -129,5 +129,5 @@
       x[i].style.display = 'block';
     }
     j.style.visibility = "hidden" 
-    document.getElementById("picture").value = "https://mediastreet.ie/wp-content/uploads/2017/08/blank-profile-picture.png" 
+    document.getElementById("picture").value = "../static/images/default-profile-pic.png" 
     });
