@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 // Javascript for register and edit profile pages
-if ((window.location.pathname== '/register') || (window.location.pathname== '/edit_profile')) {
+const form = document.getElementsByTagName("form")
+if (form) {
     // Date picker for registration form, displays over registration section.
     document.addEventListener('DOMContentLoaded', function() {
       let registrationSection = document.getElementById("registration")
