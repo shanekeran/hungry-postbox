@@ -240,6 +240,30 @@
     font-size: 15px;
   }
 
+  #discover .card {
+    width: fit-content;
+    height: 350px;
+    text-align: center;
+    border: solid 0.5px #adadad;
+    box-shadow: 0px 3px 8px #0000003d;
+  }
+
+  #discover .card-image{
+    background-color: black;
+    min-width: 230px;
+  }
+
+  #discover .card-image img{
+    width: auto;
+    max-width: 230px;
+    height: 180px;
+    margin: 0 auto;
+  }
+
+  #discover .card-content p{
+    font-size: 18px;
+  }
+
   /*----- Register.html -----*/
 
   .flash{
