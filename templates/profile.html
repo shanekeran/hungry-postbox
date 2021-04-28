@@ -13,10 +13,10 @@
                 <div class="row">
                     <!-- Profile Picture -->
                     <div class="col s12 m6 l12">
-                        {% if user_profile.picture == "" %} <!-- Adds default image if member picture is blank-->
+                        {% if member.picture == "" %} <!-- Adds default image if member picture is blank-->
                             <img src="../static/images/default-profile-pic.png" class="profile-picture">
                         {% else %} <!-- If member has uploaded a picture then that will be displayed-->
-                            <img src="{{ user_profile.picture }}" alt="profile picture" class="profile-picture">  
+                            <img src="{{ member.picture }}" alt="profile picture" class="profile-picture">  
                         {% endif %}  
                     </div>
                     <!-- User details -->
@@ -27,7 +27,7 @@
                                 <i class="fas fa-user-tag"></i>
                             </div>
                             <div class="col s8 l7 left-align">
-                                <span>{{ user_profile.username }}</span>
+                                <span>{{ member.username }}</span>
                             </div>
                         </div>
                         <!-- Location -->
@@ -36,7 +36,7 @@
                                 <i class="fas fa-home"></i>
                             </div>
                             <div class="col s8 l7 left-align">
-                                <span>{{ user_profile.country }}</span>
+                                <span>{{ member.country }}</span>
                             </div>
                         </div>
                         <!-- Email address -->
@@ -45,7 +45,7 @@
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div class="col s8 l7 left-align">
-                                <span>{{ user_profile.email }}</span>
+                                <span>{{ member.email }}</span>
                             </div>
                         </div>
                     </div>    
@@ -61,17 +61,17 @@
                             <!-- Age -->
                             <div class="col s12 m4">
                                 <h3>Age</h3>
-                                <span>{{ user_profile.dob }}</span>
+                                <span>{{ calculate_age(member.dob) }} years old</span>
                             </div>
                             <!-- Gender -->
                             <div class="col s12 m4">
                                 <h3>Gender</h3>
-                                <span>{{ user_profile.gender}}</span>
+                                <span>{{ member.gender|upper}}</span>
                             </div>
                             <!-- Nationality -->
                             <div class="col s12 m4">
                                 <h3>Nationality</h3>
-                                <span>{{ user_profile.nationality }}</span>
+                                <span>{{ member.nationality }}</span>
                             </div>
                         </div>
                     </fieldset>
@@ -83,25 +83,25 @@
                         <!-- About me-->
                         <div class="col s12 m6">
                             <h3>About me</h3>
-                            <p> {{ user_profile.description }}</p>
+                            <p> {{ member.description }}</p>
                         </div>
                         <!-- Looking for-->
                         <div class="col s12 m6">
                             <h3>I'm looking for:</h3>
-                            <p> {{ user_profile.looking_for }}</p>
+                            <p> {{ member.looking_for }}</p>
                         </div>
                     </fieldset>
                 </div>
                 <!-- Edit and Delete profile buttons-->    
                 <div class="row" id="profile-buttons">
-                    {% if session.user == user_profile.username %}
+                    {% if session.user == member.username %}
                         <div class="col s12 m6 center-align">
-                            <a href="{{ url_for('edit_profile', member_id = user_profile._id) }}" class="blue darken-2 white-text" id="edit-profile">
+                            <a href="{{ url_for('edit_profile', member_id = member._id) }}" class="blue darken-2 white-text" id="edit-profile">
                                 Edit Profile
                             </a>
                         </div>
                         <div class="col s12 m6 center-align">
-                            <a href="{{ url_for('delete_account', member_id = user_profile._id) }}" class="red lighten-1 white-text" id="delete-profile">
+                            <a href="{{ url_for('delete_account', member_id = member._id) }}" class="red lighten-1 white-text" id="delete-profile">
                                 Delete Acccount
                             </a>
                         </div>

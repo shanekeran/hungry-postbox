@@ -6,6 +6,7 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_paginate import Pagination, get_page_args
+from datetime import datetime
 if os.path.exists("env.py"):
     import env
 
@@ -120,6 +121,8 @@ def edit_profile(member_id):
                 flash("Email already in use")
                 return redirect(url_for("home_page"))
 
+        #  age_generator = calculate_age(request.form.get("dob"))
+
         # If username is available, this creates an account in the db.
         register = {
             "username": request.form.get("username").lower(),
@@ -183,11 +186,20 @@ def profile(username):
     username = mongo.db.members.find_one(
         {"username": session["user"]})["username"]
     #Retrieve user details from db
-    user_profile = mongo.db.members.find_one({"username": session["user"]})
+    member = mongo.db.members.find_one({"username": session["user"]})
+
+    # Calculates age of member based on their DOB
+    # Helped by Stack Overflow, link in README.
+    def calculate_age(born):
+        dob = datetime.strptime(born, '%d/%m/%Y').date()
+        today_string = datetime.today().strftime('%d/%m/%Y')
+        today_date = datetime.strptime(today_string, '%d/%m/%Y').date()
+        age = int((today_date - dob).days/365)
+        return(age)
 
     if session["user"]:
         return render_template("profile.html", username=username,
-                               user_profile=user_profile)
+                               member=member, calculate_age=calculate_age)
     
     return redirect(url_for("login.html"))
 
@@ -215,14 +227,31 @@ def members():
     # Paginates results
     members_paginated = paginated(members)
     pagination = pagination_args(members)
+
+    def calculate_age(born):
+        dob = datetime.strptime(born, '%d/%m/%Y').date()
+        today_string = datetime.today().strftime('%d/%m/%Y')
+        today_date = datetime.strptime(today_string, '%d/%m/%Y').date()
+        age = int((today_date - dob).days/365)
+        return(age)
+
     return render_template("members.html", members=members_paginated,
-                           pagination=pagination)
+                           pagination=pagination, calculate_age=calculate_age)
 
 
-@app.route("/member_profile/<member>")
-def member_profile(member):
-    user_profile = mongo.db.members.find_one({"username": member})
-    return render_template("profile.html", user_profile=user_profile)
+@app.route("/member_profile/<member_id>")
+def member_profile(member_id):
+    member = mongo.db.members.find_one({"username": member_id})
+
+    def calculate_age(born):
+        dob = datetime.strptime(born, '%d/%m/%Y').date()
+        today_string = datetime.today().strftime('%d/%m/%Y')
+        today_date = datetime.strptime(today_string, '%d/%m/%Y').date()
+        age = int((today_date - dob).days/365)
+        return(age)
+
+    return render_template("profile.html", member=member,
+                           calculate_age=calculate_age)
 
 
 if __name__ == "__main__":
