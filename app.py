@@ -45,7 +45,10 @@ def pagination_args(members):
 @app.route("/")
 @app.route("/home")
 def home_page():
-    return render_template("index.html")
+    # Credit to Stack Overflow user "dbam" https://stackoverflow.com/questions/2824157/random-record-from-mongodb
+    random_members = mongo.db.members.aggregate([{"$sample": {"size": 3}}])
+    
+    return render_template("index.html", random_members=random_members)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -182,10 +185,9 @@ def profile(username):
     #Retrieve user details from db
     user_profile = mongo.db.members.find_one({"username": session["user"]})
 
-    
     if session["user"]:
         return render_template("profile.html", username=username,
-                                user_profile=user_profile)
+                               user_profile=user_profile)
     
     return redirect(url_for("login.html"))
 
@@ -208,8 +210,9 @@ def logout():
 
 @app.route("/members")
 def members():
-
+    # Retrieves all members from db, sorted newest to oldest
     members = list(mongo.db.members.find().sort('_id', -1))
+    # Paginates results
     members_paginated = paginated(members)
     pagination = pagination_args(members)
     return render_template("members.html", members=members_paginated,

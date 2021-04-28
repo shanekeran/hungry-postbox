@@ -103,48 +103,25 @@
         <div>
             <!-- User profile carousel -->
             <div class="carousel"> <!-- Carousel and car templates from Materialize -->
+                {% for member in random_members %} 
                 <div class="carousel-item">
                     <div class="card">
                         <div class="card-image">
-                          <img src="https://img2.thejournal.ie/inline/1881369/original/?width=630&version=1881369"> 
+                            {% if member.picture == "" %} <!-- Adds default image if member picture is blank-->
+                                <img src="../static/images/default-profile-pic.png">
+                            {% else %} <!-- If member has uploaded a picture then that will be displayed-->
+                                <img src="{{ member.picture }}">
+                            {% endif %}
                         </div>
                         <div class="card-content">
-                            <span class="card-title">User name</span>
+                            <span class="card-title">{{ member.username }}<span>
                             <p>
-                                I am a very simple card. I am good at containing small bits of information.
-                                This is where "About you" info will go.
+                                {{ member.dob }}, {{ member.gender}}, {{member.country}}
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <div class="card">
-                        <div class="card-image">
-                          <img src="https://img2.thejournal.ie/inline/1881369/original/?width=630&version=1881369"> 
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">User name</span>
-                            <p>
-                                I am a very simple card. I am good at containing small bits of information.
-                                This is where "About you" info will go.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="https://img2.thejournal.ie/inline/1881369/original/?width=630&version=1881369">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">User name</span>
-                            <p>
-                                I am a very simple card. I am good at containing small bits of information.
-                                This is where "About you" info will go.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             <!-- Call to action-->
             <div class="container">

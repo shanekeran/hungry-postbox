@@ -588,7 +588,7 @@
     height: 250px;
   }
 
-  .card{
+  #card-container .card{
     height: fit-content;
     width: 75vw;
     max-width: 320px;
@@ -752,7 +752,7 @@
       font-size: 20px;
     }
 
-    .card{
+    #card-container .card{
       width: auto;
       max-width: 300px;
     }
