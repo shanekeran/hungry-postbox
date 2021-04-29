@@ -10,6 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.Carousel.init(elems, {});
   });
 
+// Modal for member connect button
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.modal');
+  var instances = M.Modal.init(elems, {});
+});
+
 // Javascript for register and edit profile pages
 const form = document.getElementsByTagName("form")
 if (form) {

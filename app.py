@@ -7,6 +7,7 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_paginate import Pagination, get_page_args
 from datetime import datetime
+import smtplib
 if os.path.exists("env.py"):
     import env
 
@@ -17,6 +18,8 @@ users = list(range(100))
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
+app.config["EMAIL_ADDRESS"] = os.environ.get("EMAIL_ADDRESS")
+app.config["PASSWORD"] = os.environ.get("PASSWORD")
 
 mongo = PyMongo(app)
 
@@ -250,8 +253,30 @@ def member_profile(member_id):
         age = int((today_date - dob).days/365)
         return(age)
 
+    # Email functionality
+    # Credit: LucidProgramming on YouTube (link in README)
+    def send_email(subject, message):
+        try:
+            server = smtplib.SMTP("smtp.gmail.com:587")
+            server.ehlo()
+            server.starttls()
+            server.login(app.config["EMAIL_ADDRESS"],
+                         app.config["PASSWORD"])
+            message = "Subject: {}\n\n{}".format(subject, message)
+            server.sendmail(app.config["EMAIL_ADDRESS"],
+                            app.config["EMAIL_ADDRESS"], message)
+            server.quit()
+            print("Email sent successfully")
+        except:
+            print("Email failed to send")
+
+    subject = "Pen Pal request"
+    message = "Greetings from Hungry Postbox"
+
+    #  send_email(subject, message)
+
     return render_template("profile.html", member=member,
-                           calculate_age=calculate_age)
+                           calculate_age=calculate_age, send_email=send_email)
 
 
 if __name__ == "__main__":
