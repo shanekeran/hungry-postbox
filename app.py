@@ -246,12 +246,23 @@ def members():
 def member_profile(member_id):
     member = mongo.db.members.find_one({"username": member_id})
 
+
     def calculate_age(born):
         dob = datetime.strptime(born, '%d/%m/%Y').date()
         today_string = datetime.today().strftime('%d/%m/%Y')
         today_date = datetime.strptime(today_string, '%d/%m/%Y').date()
         age = int((today_date - dob).days/365)
         return(age)
+
+
+    return render_template("profile.html", member=member,
+                           calculate_age=calculate_age)
+
+
+@app.route("/contact/<member_id>")
+def contact(member_id):
+    member = mongo.db.members.find_one({"username": member_id})
+    user = mongo.db.members.find_one({"username": session["user"]})
 
     # Email functionality
     # Credit: LucidProgramming on YouTube (link in README)
@@ -264,20 +275,23 @@ def member_profile(member_id):
                          app.config["PASSWORD"])
             message = "Subject: {}\n\n{}".format(subject, message)
             server.sendmail(app.config["EMAIL_ADDRESS"],
-                            app.config["EMAIL_ADDRESS"], message)
+                            member["email"], message)
             server.quit()
-            print("Email sent successfully")
+            flash("User contacted successfully.")
         except:
-            print("Email failed to send")
+            flash("Unable to contact user, try again later")
+    # Email subject
+    subject = "PenPal request"
+    # Email content. Recipient will be given the users username, email and URL
+    message = ("Greetings from Hungry Postbox,"
+               " {} would like to connect with you.\n"
+               "You can contact this user at {}.\n"
+               "We reccomend first viewing their profile linked below.\n\n"
+               "http://hungry-postbox.herokuapp.com/profile/{}"
+               ).format(user['username'], user['email'], user['username'])
 
-    subject = "Pen Pal request"
-    message = "Greetings from Hungry Postbox"
-
-    #  send_email(subject, message)
-
-    return render_template("profile.html", member=member,
-                           calculate_age=calculate_age, send_email=send_email)
-
+    send_email(subject, message)
+    return redirect(url_for("home_page", username=session["user"]))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

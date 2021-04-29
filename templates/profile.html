@@ -3,13 +3,13 @@
     <section>
         <div id="modal1" class="modal">
             <div class="modal-content">
-              <h4>Are you sure you want to connect?</h4>
-              <p>By clicking connect, we will send this user an email stating you are interested in connecting with them.
-                This email will contain your contact details, which they may use if they wish to get in touch with you.
+              <h4>Please be aware</h4>
+              <p>By clicking contact, we will send this user an email stating you are interested in connecting with them.
+                This email will contain your contact details, which they can use if they wish to get in touch with you.
               </p>
             </div>
             <div class="modal-footer">
-              <a href="#!" class="modal-close waves-effect waves-red red btn">Connect {{ send_email("Penpal request from user", "hi") }}</a>
+              <a href="{{ url_for('contact',  member_id=member.username) }}" class="modal-close waves-effect waves-red red btn" id="confirm-connect">Contact</a>
             </div>
           </div>
         <!-- Profile page heading-->
@@ -62,7 +62,7 @@
                                     <span>{{ member.email }}</span>
                                 {% else %} 
                                     <a href="#modal1" class="btn red waves-effect waves-light modal-trigger" id="connect-btn">
-                                        Connect
+                                        Contact
                                     </a>
                                 {% endif %}
                             </div>
