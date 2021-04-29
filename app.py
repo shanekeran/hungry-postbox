@@ -45,6 +45,17 @@ def pagination_args(members):
 
     return Pagination(page=page, per_page=PER_PAGE, total=total)
 
+# Calculates age of member based on their DOB
+# Helped by Stack Overflow, link in README.
+
+
+def calculate_age(born):
+    dob = datetime.strptime(born, '%d/%m/%Y').date()
+    today_string = datetime.today().strftime('%d/%m/%Y')
+    today_date = datetime.strptime(today_string, '%d/%m/%Y').date()
+    age = int((today_date - dob).days/365)
+    return(age)
+
 
 @app.route("/")
 @app.route("/home")
@@ -52,7 +63,8 @@ def home_page():
     # Credit to Stack Overflow user "dbam" https://stackoverflow.com/questions/2824157/random-record-from-mongodb
     random_members = mongo.db.members.aggregate([{"$sample": {"size": 3}}])
     
-    return render_template("index.html", random_members=random_members)
+    return render_template("index.html", random_members=random_members,
+                           calculate_age=calculate_age)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -124,7 +136,6 @@ def edit_profile(member_id):
                 flash("Email already in use")
                 return redirect(url_for("home_page"))
 
-        #  age_generator = calculate_age(request.form.get("dob"))
 
         # If username is available, this creates an account in the db.
         register = {
@@ -191,19 +202,10 @@ def profile(username):
     #Retrieve user details from db
     member = mongo.db.members.find_one({"username": session["user"]})
 
-    # Calculates age of member based on their DOB
-    # Helped by Stack Overflow, link in README.
-    def calculate_age(born):
-        dob = datetime.strptime(born, '%d/%m/%Y').date()
-        today_string = datetime.today().strftime('%d/%m/%Y')
-        today_date = datetime.strptime(today_string, '%d/%m/%Y').date()
-        age = int((today_date - dob).days/365)
-        return(age)
-
     if session["user"]:
         return render_template("profile.html", username=username,
                                member=member, calculate_age=calculate_age)
-    
+
     return redirect(url_for("login.html"))
 
 
@@ -231,13 +233,6 @@ def members():
     members_paginated = paginated(members)
     pagination = pagination_args(members)
 
-    def calculate_age(born):
-        dob = datetime.strptime(born, '%d/%m/%Y').date()
-        today_string = datetime.today().strftime('%d/%m/%Y')
-        today_date = datetime.strptime(today_string, '%d/%m/%Y').date()
-        age = int((today_date - dob).days/365)
-        return(age)
-
     return render_template("members.html", members=members_paginated,
                            pagination=pagination, calculate_age=calculate_age)
 
@@ -245,15 +240,6 @@ def members():
 @app.route("/member_profile/<member_id>")
 def member_profile(member_id):
     member = mongo.db.members.find_one({"username": member_id})
-
-
-    def calculate_age(born):
-        dob = datetime.strptime(born, '%d/%m/%Y').date()
-        today_string = datetime.today().strftime('%d/%m/%Y')
-        today_date = datetime.strptime(today_string, '%d/%m/%Y').date()
-        age = int((today_date - dob).days/365)
-        return(age)
-
 
     return render_template("profile.html", member=member,
                            calculate_age=calculate_age)
