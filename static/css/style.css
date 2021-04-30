@@ -223,8 +223,15 @@
     text-align: center;
   }
 
+  .carousel{
+    perspective: 150px;
+    -webkit-perspective: 150px;
+  }
+
   .carousel .carousel-item{
-    top: -19%;
+    top: -10%;
+    width: 160px;
+    height: 160px;
   }
 
   #discover .container{
@@ -241,27 +248,38 @@
   }
 
   #discover .card {
-    width: fit-content;
-    height: 350px;
+    width: inherit;
     text-align: center;
     border: solid 0.5px #adadad;
     box-shadow: 0px 3px 8px #0000003d;
+    margin-left: 20px;
   }
 
   #discover .card-image{
-    background-color: black;
-    min-width: 230px;
+    background-color: rgb(255, 255, 255);
+    width: inherit;
   }
 
   #discover .card-image img{
     width: auto;
-    max-width: 230px;
-    height: 180px;
+    max-width: 160px;
+    height: 140px;
     margin: 0 auto;
+    border-radius: 50%;
+    margin-top: 15px;
+    padding: 0 15px;
+  }
+
+  #discover .card-content{
+    padding: 10px;
+  }
+
+  #discover .card-title{
+    font-size: 18px;
   }
 
   #discover .card-content p{
-    font-size: 18px;
+    font-size: 15px;
   }
 
   /*----- Register.html -----*/
@@ -327,10 +345,10 @@
   }
 
   #default-picture{
-    width: auto;
+    width: 60%;
     height: 100%;
     position: relative;
-    left: 50%;
+    left: 20%;
   }
 
   #picture-preview-container{
@@ -652,6 +670,11 @@
   
   /* Media Queries */
 
+  @media only screen and (min-width: 450px) {
+
+  
+  }
+
   @media only screen and (min-width: 601px) {
 
     .nav-left{
@@ -703,6 +726,45 @@
 
     #discover .container p, #aboutus-container p {
       font-size: 17px;
+    }
+
+    .carousel{
+      perspective: 500px;
+      -webkit-perspective: 500px;
+    }
+
+    .carousel .carousel-item{
+      top: -19%;
+      width: 200px;
+      height: 200px;
+    }
+
+    #discover .card{
+      /*height: 350px;*/
+      min-width: auto;
+      max-width: fit-content;
+      margin-left: 0px;
+    }
+
+    #discover .card-image{
+      width: 200px;
+    }
+
+    #discover .card-image img{
+      max-width: 200px;
+      height: 150px;
+    }
+
+    #discover .card-title{
+      font-size: 22px;
+    }
+
+    #discover .card-content{
+      padding: 20px;
+    }
+
+    #discover .card-content p{
+      font-size: 15px;
     }
 
     #registration{
