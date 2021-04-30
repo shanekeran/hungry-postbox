@@ -126,4 +126,7 @@
     </div>
 </section>
 
-{% endblock %} 
+{% endblock %}
+{% block custom_scripts %}
+<script src="{{url_for('static', filename='js/form.js') }}"></script>
+{% endblock %}
