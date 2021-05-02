@@ -79,11 +79,13 @@ def register():
 
         if existing_member:
             flash("Username already exists")
-            return redirect(url_for("register"))
+            return redirect(url_for("register",
+                                    _external=True, _scheme="https"))
         
         if existing_email:
             flash("Email already in use")
-            return redirect(url_for("register"))
+            return redirect(url_for("register",
+                                    _external=True, _scheme="https"))
 
         # If username is available, this creates an account in the db.
         register = {
@@ -104,7 +106,8 @@ def register():
         # Put the registered user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Account created")
-        return redirect(url_for("home_page", username=session["user"]))
+        return redirect(url_for("home_page", username=session["user"],
+                                _external=True, _scheme="https"))
     return render_template("register.html")
 
 
@@ -125,7 +128,8 @@ def edit_profile(member_id):
                 {"username": session["user"]})
             if existing_member != current_username:
                 flash("Username already in use")
-                return redirect(url_for("edit_profile"))
+                return redirect(url_for("edit_profile",
+                                        _external=True, _scheme="https"))
 
         # Flash message if user inputs an email address that's already taken
         # Flash message doesn't show if user reinputs their current email
@@ -134,7 +138,8 @@ def edit_profile(member_id):
                 {"username": session["user"]})["email"]
             if request.form.get("email") != current_email:
                 flash("Email already in use")
-                return redirect(url_for("home_page"))
+                return redirect(url_for("home_page",
+                                        _external=True, _scheme="https"))
 
 
         # If username is available, this creates an account in the db.
@@ -157,7 +162,8 @@ def edit_profile(member_id):
         mongo.db.members.update({"_id": ObjectId(member_id)}, register)
         user_profile = mongo.db.members.find_one({"username": session["user"]})
         return redirect(url_for("home_page", username=session["user"],
-                                user_profile=user_profile))
+                                user_profile=user_profile,
+                                _external=True, _scheme="https"))
 
     member = mongo.db.members.find_one({"_id": ObjectId(member_id)})
     user_profile = mongo.db.members.find_one({"username": session["user"]})
@@ -178,17 +184,19 @@ def login():
                 existing_member['password'], request.form.get('password')):
                 session["user"] = request.form.get("username").lower()
                 #  flash("Welcome, {}".format(request.form.get("username")))
-                return redirect(url_for(
-                    "profile", username=session["user"]))
+                return redirect(url_for("profile", username=session["user"],
+                                _external=True, _scheme="https"))
             else:
                 #invalid password match
                 flash("Incorrect Username and/or Password")
-                return redirect(url_for("login"))
+                return redirect(url_for("login",
+                                _external=True, _scheme="https"))
 
         else:
             # Username not found
             flash("Incorrect Username and/or Password")
-            return redirect(url_for("login"))
+            return redirect(url_for("login",
+                                    _external=True, _scheme="https"))
 
 
     return render_template("login.html")
@@ -196,17 +204,17 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    #Retrieve the session user's username from db
+    # Retrieve the session user's username from db
     username = mongo.db.members.find_one(
         {"username": session["user"]})["username"]
-    #Retrieve user details from db
+    # Retrieve user details from db
     member = mongo.db.members.find_one({"username": session["user"]})
 
     if session["user"]:
         return render_template("profile.html", username=username,
                                member=member, calculate_age=calculate_age)
 
-    return redirect(url_for("login.html"))
+    return redirect(url_for("login.html", _external=True, _scheme="https"))
 
 
 @app.route("/delete_account/<member_id>")
@@ -214,7 +222,7 @@ def delete_account(member_id):
     mongo.db.members.remove({"_id": ObjectId(member_id)})
     session.clear()  # logs out user
     flash("Account Successfully Deleted")
-    return redirect(url_for("home_page"))
+    return redirect(url_for("home_page",_external=True, _scheme="https"))
 
 
 @app.route("/logout")
@@ -222,7 +230,7 @@ def logout():
     # Logs user out by removing session cookie and redirecting back to login.
     flash("Successfully logged out")
     session.pop("user")
-    return redirect(url_for("login"))
+    return redirect(url_for("login",_external=True, _scheme="https"))
 
 
 @app.route("/members")
@@ -277,7 +285,7 @@ def contact(member_id):
                ).format(user['username'], user['email'], user['username'])
 
     send_email(subject, message)
-    return redirect(url_for("home_page", username=session["user"]))
+    return redirect(url_for("home_page", username=session["user"], _external=True, _scheme="https"))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
