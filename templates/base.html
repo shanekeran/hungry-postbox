@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <!--Local CSS-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" type="text/css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/jpg" href="../static/images/hp-logo-tiny.png"/>
     <title>Hungry Postbox</title>
 </head>
 <body>
@@ -42,7 +44,7 @@
             <li><a href="{{ url_for('home_page') }}" class="flow-text">Home</a></li>
             <li><a href="{{ url_for('home_page', _anchor='about') }}" class="flow-text">About</a></li>
             {% if session.user %}
-                <li><a href="{{ url_for('members')}}" class="flow-text"></a></li>
+                <li><a href="{{ url_for('members')}}" class="flow-text">Members</a></li>
                 <li><a href="{{ url_for('profile', username=session['user']) }}" class="flow-text">Profile</a></li>
                 <li><a href="{{ url_for('logout') }}" class="flow-text">Log Out</a></li>
             {% else %}
