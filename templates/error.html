@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Font Awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous"/>
+    <!--Materialize CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <!--Local CSS-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" type="text/css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="../static/images/hp-logo-tiny.png"/>
+    <title>Hungry Postbox</title>
+</head>
+<body>
+<div class="container">
+    <div id="error">
+        <img src="../static/images/hp-logo.png" alt="hungry postbox logo"><br>
+        <span class="error-text flow-text">
+            Woops! Looks like something went wrong.<br>
+            Head back to our home page while we try to fix it.
+        </span><br>
+        <a href="{{ url_for('home_page') }}" class="waves-effect waves-light btn flow-text">Home</a>
+    </div>
+</div>
+</body>
+</html>

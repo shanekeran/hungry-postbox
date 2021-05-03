@@ -204,17 +204,19 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # Retrieve the session user's username from db
-    username = mongo.db.members.find_one(
-        {"username": session["user"]})["username"]
-    # Retrieve user details from db
-    member = mongo.db.members.find_one({"username": session["user"]})
-
     if session["user"]:
+
+        # Retrieve the session user's username from db
+        username = mongo.db.members.find_one(
+            {"username": session["user"]})["username"]
+        # Retrieve user details from db
+        member = mongo.db.members.find_one({"username": session["user"]})
+
         return render_template("profile.html", username=username,
                                member=member, calculate_age=calculate_age)
 
-    return redirect(url_for("login.html", _external=True, _scheme="https"))
+    if "user" not in session:
+        return redirect(url_for("login.html", _external=True, _scheme="https"))
 
 
 @app.route("/delete_account/<member_id>")
@@ -285,7 +287,18 @@ def contact(member_id):
                ).format(user['username'], user['email'], user['username'])
 
     send_email(subject, message)
-    return redirect(url_for("home_page", username=session["user"], _external=True, _scheme="https"))
+    return redirect(url_for("home_page", username=session["user"],
+                            _external=True, _scheme="https"))
+
+
+# Error handlers for 404/500 errors.
+@app.errorhandler(404)
+def no_page_found(error):
+    return render_template('error.html', error=error), 400
+
+@app.errorhandler(500)
+def server_error(error):
+    return render_template('error.html', error=error), 500
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
