@@ -8,6 +8,9 @@
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous"/>
     <!--Materialize CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Handlee&family=Raleway:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
     <!--Local CSS-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" type="text/css">
     <!-- Favicon -->
@@ -17,7 +20,7 @@
 <body>
     <header>
         <!-- Navigation Bar-->
-        <nav class="teal lighten-2">
+        <nav class="teal lighten-2 handlee">
             <div class="nav-wrapper valign-wrapper">
                 <a href="#" class="brand-logo center"><img src="../static/images/hp-logo-tiny.png" alt="hungry postbox logo" id="nav-logo" class="hvr-rotate"></a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger hide-on-med-and-up"><i class="fas fa-bars"></i></a>
@@ -40,7 +43,7 @@
             </div>
         </nav>
         <!-- Mobile nav menu items-->
-        <ul class="sidenav teal lighten-2" id="mobile-demo">
+        <ul class="sidenav teal lighten-2 handlee" id="mobile-demo">
             <li><a href="{{ url_for('home_page') }}" class="flow-text">Home</a></li>
             <li><a href="{{ url_for('home_page', _anchor='about') }}" class="flow-text">About</a></li>
             {% if session.user %}
@@ -60,7 +63,7 @@
     </main>
     
     <!--Footer-->
-    <footer class="page-footer teal lighten-2">
+    <footer class="page-footer teal lighten-2 handlee">
         <div class="container" id="footer-container">
             <div class="row" id="footer-row">
                 <!-- Social Media icons-->

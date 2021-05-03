@@ -1,3 +1,12 @@
+  /*----- Fonts -----*/
+  .handlee,  input:not([type=submit]){
+  font-family: 'Handlee', cursive;
+  }
+
+  body, .raleway{
+    font-family: 'Raleway', serif;
+  }
+  
   /*----- Base.html -----*/
   html{
     scroll-behavior: smooth;
@@ -491,8 +500,8 @@
   #login{
     display: flex;
     height: 80vh;
-    min-height: 300px;
-    max-height: 700px;
+    min-height: 450px;
+    align-items: center;
     text-align: center;
   }
 
@@ -651,6 +660,7 @@
     margin: 30px auto;
     overflow-x: auto;
     border: 5px outset #b4b4b4;
+    border-radius: 5%;
     box-shadow: 3px 2px 5px #000000ad;
   }
 
