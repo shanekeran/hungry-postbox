@@ -693,6 +693,28 @@
     background-color: #4db6ac;
   }
 
+  #search-row{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+
+  #search-row .input-field, #search{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #search{
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  #query{
+    border-bottom-color: white;
+    border-bottom-style: solid;
+  }
+
   /*----- 404.html -----*/
   #error{
     text-align: center;

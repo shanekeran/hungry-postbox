@@ -291,6 +291,17 @@ def contact(member_id):
                             _external=True, _scheme="https"))
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    members = list(mongo.db.members.find({"$text": {"$search": query}}))
+    # Paginates results
+    members_paginated = paginated(members)
+    pagination = pagination_args(members)
+    return render_template("members.html", members=members_paginated,
+                           pagination=pagination, calculate_age=calculate_age)
+
+
 # Error handlers for 404/500 errors.
 @app.errorhandler(404)
 def no_page_found(error):
