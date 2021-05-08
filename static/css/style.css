@@ -353,7 +353,7 @@
     overflow-y: scroll;
   }
 
-  #default-picture{
+  #default-picture, #default-picture2{
     width: 60%;
     height: 100%;
     position: relative;
@@ -662,6 +662,10 @@
     border: 5px outset #b4b4b4;
     border-radius: 5%;
     box-shadow: 3px 2px 5px #000000ad;
+  }
+
+  #card-container .card img{
+    object-fit: cover; /* prevents images from stretching */
   }
 
   .btn-floating{
