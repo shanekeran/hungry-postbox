@@ -92,54 +92,51 @@ function updateIndicators(n) {
   indicator[n].className += " active fas fa-dot-circle";
 }
 
-
 // Shows URL input when user selects that they wish to customise their profile picture
-customiseButton = document.getElementById("customise-button")
-if(customiseButton){
+const customiseButton = document.getElementById("customise-button")
+var optionB = document.getElementsByClassName("customise")
+var optionA = document.getElementsByClassName("default")
+var input = document.getElementById("url")
+
+if(customiseButton){  
   customiseButton.addEventListener('click', function() {
-    var y = document.getElementsByClassName("customise")
-    var x = document.getElementsByClassName("default")
-    var j = document.getElementById("url")
-    for (var i=0;i<y.length;i+=1){
-      y[i].style.display = 'block';
+    for (var i=0;i<optionB.length;i+=1){
+      optionB[i].style.display = 'block';
     }
-    for (var i=0;i<x.length;i+=1){
-      x[i].style.display = 'none';
+    for (var i=0;i<optionA.length;i+=1){
+      optionA[i].style.display = 'none';
     }
-    j.style.visibility = "visible" 
+    input.style.visibility = "visible" 
     document.getElementById("picture").value = ""  
   });
 }
 
 // Hides URL input when user reselects the option to use the default profile picture
-defaultButton = document.getElementById('default-button')
+const defaultButton = document.getElementById('default-button')
 if(defaultButton){
   defaultButton.addEventListener('click', function() {
-    var y = document.getElementsByClassName("customise")
-    var x = document.getElementsByClassName("default")
-    var j = document.getElementById("url")
-    for (var i=0;i<y.length;i+=1){
-      y[i].style.display = 'none';
+    for (var i=0;i<optionB.length;i+=1){
+      optionB[i].style.display = 'none';
     }
-    for (var i=0;i<x.length;i+=1){
-      x[i].style.display = 'block';
+    for (var i=0;i<optionA.length;i+=1){
+      optionA[i].style.display = 'block';
     }
-    j.style.visibility = "hidden" 
+    input.style.visibility = "hidden" 
     document.getElementById("picture").value = "../static/images/default-profile-pic.png" 
     });
 }
 
 // Edit profile
-document.getElementById('change-button').addEventListener('click', function() {
-  var y = document.getElementsByClassName("customise")
-  var x = document.getElementsByClassName("default")
-  var j = document.getElementById("url")
-  for (var i=0;i<y.length;i+=1){
-    y[i].style.display = 'block';
-  }
-  for (var i=0;i<x.length;i+=1){
-    x[i].style.display = 'none';
-  }
-  j.style.visibility = "visible" 
-  document.getElementById("picture").value = "";
-});
+const changeButton = document.getElementById('change-button')
+if(changeButton){
+  changeButton.addEventListener('click', function() {
+    for (var i=0;i<optionB.length;i+=1){
+      optionB[i].style.display = 'block';
+    }
+    for (var i=0;i<optionA.length;i+=1){
+      optionA[i].style.display = 'none';
+    }
+    input.style.visibility = "visible" 
+    document.getElementById("picture").value = "";
+  });
+}
