@@ -109,9 +109,9 @@
                     <div class="card">
                         <div class="card-image">
                             {% if member.picture == "" %} <!-- Adds default image if member picture is blank-->
-                                <img src="../static/images/default-profile-pic.png">
+                                <img src="../static/images/default-profile-pic.png" alt="member profile picture">
                             {% else %} <!-- If member has uploaded a picture then that will be displayed-->
-                                <img src="{{ member.picture }}">
+                                <img src="{{ member.picture }}" alt="member profile picture">
                             {% endif %}
                         </div>
                         <div class="card-content">

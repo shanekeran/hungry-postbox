@@ -26,7 +26,7 @@
                     <!-- Profile Picture -->
                     <div class="col s12 m6 l12">
                         {% if member.picture == "" %} <!-- Adds default image if member picture is blank-->
-                            <img src="../static/images/default-profile-pic.png" class="profile-picture">
+                            <img src="../static/images/default-profile-pic.png" alt="profile picture" class="profile-picture">
                         {% else %} <!-- If member has uploaded a picture then that will be displayed-->
                             <img src="{{ member.picture }}" alt="profile picture" class="profile-picture">  
                         {% endif %}  
