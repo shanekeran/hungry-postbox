@@ -233,7 +233,7 @@ def logout():
     # Logs user out by removing session cookie and redirecting back to login.
     flash("Successfully logged out")
     session.pop("user")
-    return redirect(url_for("login",_external=True, _scheme="https"))
+    return redirect(url_for("login", _external=True, _scheme="https"))
 
 
 @app.route("/members")
