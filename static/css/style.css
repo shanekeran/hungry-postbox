@@ -1,11 +1,15 @@
   /*----- Fonts -----*/
-  .handlee,  input:not([type=submit]){
+.handlee,  input:not([type=submit]){
   font-family: 'Handlee', cursive;
-  }
+}
 
-  body, .raleway{
+body, .raleway{
     font-family: 'Raleway', serif;
-  }
+}
+
+.text-shadow{
+    text-shadow: 2px 0.5px 3px rgba(0, 0, 0, 0.6);
+}
   
   /*----- Base.html -----*/
   html{
@@ -355,7 +359,8 @@
 
   #default-picture, #default-picture2{
     width: 60%;
-    height: 100%;
+    height: auto;
+    max-height: 200px;
     position: relative;
     left: 20%;
   }
@@ -614,7 +619,7 @@
     border-radius: 10px 5px;
     background-color: white;
     padding: 5px;
-    color: #12786e;
+    color: #000000;
     font-size: 15px;
   }
 
