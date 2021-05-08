@@ -99,7 +99,11 @@
                 <div class="form-page">
                     <div class="row">
                         <div class="col s12" id="picture-preview-container">
-                            <img src="../static/images/default-profile-pic.png" alt="default profile picture" id="default-picture" class="default">
+                            {% if member.picture == "" or member.picture == "../static/images/default-profile-pic.png"  %}
+                                <img src="../static/images/default-profile-pic.png" alt="default profile picture" id="default-picture" class="default">
+                            {% else %}
+                                <img src="{{ member.picture }}" alt="default profile picture" id="default-picture" class="default">
+                            {% endif %}
                         </div>
                     </div>
                     <div class="row" id="url-input">
@@ -110,8 +114,12 @@
                     </div>
                     <div class="row">
                         <div class="col s12">
-                            <span id="customise-button" class="default picture-button">Customise Profile picture</span>
-                            <span id="default-button" class="customise picture-button">Use Default Profile picture</span>
+                            {% if member.picture == "" or member.picture == "../static/images/default-profile-pic.png"  %}
+                                <span id="customise-button" class="default picture-button">Customise Profile picture</span>
+                                <span id="default-button" class="customise picture-button">Use Default Profile picture</span>
+                            {% else %}
+                                <span id="change-button" class="default picture-button">Change Profile picture</span>
+                            {% endif %}
                         </div>
                     </div>    
                 </div>

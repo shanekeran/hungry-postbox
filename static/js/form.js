@@ -94,7 +94,43 @@ function updateIndicators(n) {
 
 
 // Shows URL input when user selects that they wish to customise their profile picture
-document.getElementById('customise-button').addEventListener('click', function() {
+customiseButton = document.getElementById("customise-button")
+if(customiseButton){
+  customiseButton.addEventListener('click', function() {
+    var y = document.getElementsByClassName("customise")
+    var x = document.getElementsByClassName("default")
+    var j = document.getElementById("url")
+    for (var i=0;i<y.length;i+=1){
+      y[i].style.display = 'block';
+    }
+    for (var i=0;i<x.length;i+=1){
+      x[i].style.display = 'none';
+    }
+    j.style.visibility = "visible" 
+    document.getElementById("picture").value = ""  
+  });
+}
+
+// Hides URL input when user reselects the option to use the default profile picture
+defaultButton = document.getElementById('default-button')
+if(defaultButton){
+  defaultButton.addEventListener('click', function() {
+    var y = document.getElementsByClassName("customise")
+    var x = document.getElementsByClassName("default")
+    var j = document.getElementById("url")
+    for (var i=0;i<y.length;i+=1){
+      y[i].style.display = 'none';
+    }
+    for (var i=0;i<x.length;i+=1){
+      x[i].style.display = 'block';
+    }
+    j.style.visibility = "hidden" 
+    document.getElementById("picture").value = "../static/images/default-profile-pic.png" 
+    });
+}
+
+// Edit profile
+document.getElementById('change-button').addEventListener('click', function() {
   var y = document.getElementsByClassName("customise")
   var x = document.getElementsByClassName("default")
   var j = document.getElementById("url")
@@ -105,20 +141,5 @@ document.getElementById('customise-button').addEventListener('click', function()
     x[i].style.display = 'none';
   }
   j.style.visibility = "visible" 
-  document.getElementById("picture").value = ""  
-  });
-
-// Hides URL input when user reselects the option to use the default profile picture
-document.getElementById('default-button').addEventListener('click', function() {
-  var y = document.getElementsByClassName("customise")
-  var x = document.getElementsByClassName("default")
-  var j = document.getElementById("url")
-  for (var i=0;i<y.length;i+=1){
-    y[i].style.display = 'none';
-  }
-  for (var i=0;i<x.length;i+=1){
-    x[i].style.display = 'block';
-  }
-  j.style.visibility = "hidden" 
-  document.getElementById("picture").value = "../static/images/default-profile-pic.png" 
-  });
+  document.getElementById("picture").value = "";
+});

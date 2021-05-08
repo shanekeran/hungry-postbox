@@ -160,9 +160,10 @@ def edit_profile(member_id):
         session["user"] = request.form.get("username").lower()
         # Updates user profile in db
         mongo.db.members.update({"_id": ObjectId(member_id)}, register)
-        user_profile = mongo.db.members.find_one({"username": session["user"]})
-        return redirect(url_for("home_page", username=session["user"],
-                                user_profile=user_profile,
+        # Retrieve the session user's username from db
+        username = mongo.db.members.find_one(
+            {"username": session["user"]})["username"]
+        return redirect(url_for("profile", username=username,
                                 _external=True, _scheme="https"))
 
     member = mongo.db.members.find_one({"_id": ObjectId(member_id)})
@@ -298,6 +299,8 @@ def search():
     # Paginates results
     members_paginated = paginated(members)
     pagination = pagination_args(members)
+    if (members_paginated == ""):
+        print("None found")
     return render_template("members.html", members=members_paginated,
                            pagination=pagination, calculate_age=calculate_age)
 
