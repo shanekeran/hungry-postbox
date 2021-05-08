@@ -141,7 +141,6 @@ def edit_profile(member_id):
                 return redirect(url_for("home_page",
                                         _external=True, _scheme="https"))
 
-
         # If username is available, this creates an account in the db.
         register = {
             "username": request.form.get("username").lower(),
