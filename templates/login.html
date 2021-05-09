@@ -2,6 +2,7 @@
 {% block content %}
     <section id="login">
         <div class="container" id="login-container">
+            <h1 class="center-align teal-text flow-text">Log in to your account</h1>
             <div class="row">
                 <div class="col s12 l6">
                     <img src="./static/images/letters-and-ink.png" alt="stack of letters next to ink and quill" id="login-image">
@@ -12,7 +13,7 @@
                         {% if messages %}
                             {% for message in messages %}
                                 <div class="row">
-                                    <h4 class="flash">{{ message }}</h4>
+                                    <h4 class="flash flow-text">{{ message }}</h4>
                                 </div>
                             {% endfor %}
                         {% endif %}
@@ -29,6 +30,7 @@
                             </div>
                             <div class="input-field col s12">
                                 <input type="submit" value="Log In" class="btn hvr-grow-shadow">
+                                <p class="teal-text center-align">Not a member? <a href="{{ url_for('register') }}">Register.</a></p>
                             </div>
                         </div>
                     </form>

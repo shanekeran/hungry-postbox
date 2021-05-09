@@ -2,12 +2,14 @@
 {% block content %} 
 
 <section id="registration">
+    <h1 class="teal-text center-align flow-text">Register your account below</h1>
+    <p class="teal-text center-align">Already a member? <a href="{{ url_for('login') }}">Log in.</a></p>
     <!-- flash messages displayed here-->
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for message in messages %}
                 <div class="row">
-                    <h4 class="flash">{{ message }}</h4>
+                    <h4 class="flash flow-text">{{ message }}</h4>
                 </div>
             {% endfor %}
          {% endif %}

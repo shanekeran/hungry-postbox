@@ -307,6 +307,10 @@ body, .raleway{
     width: 100vw;
   }
 
+  #registration p, #login-container p{
+    font-size: 11px;
+  }
+
   #form-container{
     margin-top: 50px;
     padding: 25px;
@@ -954,6 +958,10 @@ body, .raleway{
 
     #register-button-1, #login-container .btn{
       font-size: 21px;
+    }
+
+    #registration p, #login-container p{
+      font-size: 14px;
     }
 
     .fa-user-check, .fa-handshake, .fa-pen-fancy, .fa-mail-bulk{
