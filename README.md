@@ -30,7 +30,7 @@ I used user stories and the five planes of user experience design as a framework
 - Contact other members who I would like to become pen pals with and likewise for them to be able to contact me.
 - My account password to be securely stored to prevent any unauthorised access to my account.
 
-* As a site owner, I want to*
+*As a site owner, I want to*
 
 - Provide a platform for users who to find new pen pals.
 - Promote my brand throughout the site, including links to our social media accounts.
@@ -54,5 +54,58 @@ The second business goal is to continually grow the userbase through website sig
 
 ### Scope
 
+Features to be included on the website are:
+- Photo carousel of user profiles on the home page. This is to give first time visitors a basic insight into some member profiles.
+- Sign up form that is split into different sections with a progress bar to give user feedback.
+- User profiles that can be edited and deleted.
+- Email function which will allow users to communicate with each other in a safe way.
+- Members page for signed in users to search for Pen Pals.
+
+Features to be introduced at a later date:
+- Filter member search by gender, country, age.
+- A built in messaging system.
+- Friends list
 
 
+### Structure
+
+Hungry Postbox is a multi-page website, with certain pages only accessible to users that are logged in.
+
+1. Home
+
+    The Home section contains a large logo, page heading and CTA button for users to register an account. When a user is logged in, the CTA button then directs the user to the members page.
+
+2. About
+
+    The About section contains a simplfied process of how to find a Pen Pal. Below is some imagery and a paragraph about the Hungry Postbox.
+
+3. Discovery
+
+    The Discovery section contains a carousel of 3 random member profiles, heading and CTA button for users to register. This section does not feature on the navigation bar as content here is minimal.
+
+4. Register
+
+    The registration form is styled as an envelope in keeping with the handwritten letter theme. The form contains validation and progress indicators. I included a link to the log in page for users who click register but already have an account.
+
+5. Log In
+
+    The Log In page contains imagery and a simple log in form. It has a link to the registration page for users trying to log in without an account.
+
+6. Profile (Logged In users only)
+
+    User profiles contain all the information they submitted on their registration form, displayed nicely for other members to view. When viewing your own profile, you will see your email address displayed. When viewing other members profiles, this is replaced with a contact button. Below the profile are two buttons to edit or delete the profile. These buttons are only displayed on your own profile.
+
+7. Members (Logged In users only)
+
+    This page is where users can view and search for other member profiles with the goal of finding a pen pal. Member profiles are displayed as cards, which contain an button to view their full profile. Member cards are paginated so each page contains a maximum on 12 member profiles. The search bar allows you to search for members by username.
+
+
+### Skeleton
+
+I used Balsamiq to create a wireframe for each device. The wireframes were created in the planning stage, so the current version differs slightly.
+
+[Wireframe - Home page]()
+[Wireframe - Register]()
+[Wireframe - Login]()
+[Wireframe - Profile]()
+[Wireframe - Members]()
