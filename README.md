@@ -104,8 +104,48 @@ Hungry Postbox is a multi-page website, with certain pages only accessible to us
 
 I used Balsamiq to create a wireframe for each device. The wireframes were created in the planning stage, so the current version differs slightly.
 
-[Wireframe - Home page]()
-[Wireframe - Register]()
-[Wireframe - Login]()
-[Wireframe - Profile]()
-[Wireframe - Members]()
+[Wireframe - Home page](wireframes/home-wireframe.png)
+
+[Wireframe - Register](wireframes/register-wireframe.png)
+
+[Wireframe - Profile](wireframes/profile-wireframe.png)
+
+[Wireframe - Members](wireframes/members-wireframe.png)
+
+### Surface
+
+#### Colour
+
+My main colour theme is a mix of #4db6ac and white. I chose #ff5252 for most of the buttons as it works well with the main colours.
+
+![Main colour 1](wireframes/color1.PNG)
+![Main colour 2](wireframes/color2.PNG)
+![Button colour](wireframes/color3.PNG)
+
+#### Typography
+
+I chose the Raleway font for my text because of its nice design and readability. In keeping with the hand-written letters theme of the website, I also used the handlee font to make certain text appear in a handwritten style. I specified Sans-Serif and Cursive to be used in their place if Google Fonts is unavailable.
+
+## Technologies Used
+__
+
+### Languages
+
+- HTML5
+- CSS3
+- JavaScript
+- Python
+
+### Frameworks, Libraries & Programs used
+
+1. Git
+
+    Used for Version control.
+
+2. GitHub
+
+    Project files were pushed from Git to GitHub.
+
+3. Gitpod
+
+    I used Gitpod's dev environment to write the code for my project.
