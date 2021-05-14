@@ -149,3 +149,78 @@ __
 3. Gitpod
 
     I used Gitpod's dev environment to write the code for my project.
+
+4. Materialize 1.0.0
+
+    Materialize was used mainly for navigation bar, responsive grid layout, pagination, cards and carousel. I also utilised built in classes for applying colour to backgrounds and text.
+
+5. Google Fonts
+
+    Google Fonts was used to access Raleway and Handlee fonts.
+
+6. Font Awesome
+
+    Font Awesome was used to display various icons throughout the site.
+
+7. Adobe Creative Suite
+
+    This was used to create the logo and other imagery on the site.
+
+8. Balsamiq
+
+    Balsamiq was used to create the wireframes.
+
+9. Am I Responsive?
+
+    Used to create the image at the beginning of this readme, with the website displayed on various devices.
+
+10. Heroku
+
+    The live project was deployed to Heroku.
+
+11. MongoDB
+
+    MongoDB was used as the database for this project.
+
+12. Werkzeug
+
+    This was used to protect member passwords.
+
+13. Python’s built-in smtplib library 
+
+    This deserves a shout out for allowing me to send emails to members when another member is interested in contacting them.
+
+14. Hover.css
+
+    Hover.css classes were used to apply custom hover effects to buttons.
+
+## Testing
+__
+
+
+### Validation
+
+The W3C Markup Validator, W3C CSS Validator and jshint were used to validate my code to ensure no syntax errors were overlooked. My Python code was checked to make sure it met PEP8 standards.
+
+
+## Deployment
+__
+
+### Heroku
+
+1. Navigated to [Heroku](https://www.heroku.com/)
+2. Signed into my Heroku account. 
+3. Selected "New" on the dashboard and then "Create new application" option as below:
+4. Selected a name for my application, selected "Europe" as the region and clicked "Create app".
+5. With the "Deploy" tab selected, "GitHub - Connect to GitHub" was chosen as the deployment method.
+6. Making sure my GitHub profile was displayed, I clicked "connect" next to the GitHub repository for this project.
+7. Then I navigated to the "Settings" tab and clicked on "Reveal Convig Vars".
+8. Added in my configuration variables to Heroku.
+9. Navigated back to the "Deploy" tab and selected "Enable Automatic Deploys" with the master branch selected from the dropdown box.
+10. Then clicked on "Deploy Branch" also with master selected.
+11. Site is deployed and any changes are automatically deployed each time they are updated and pushed to GitHub during development.
+
+## Credits
+__
+
+### Code
