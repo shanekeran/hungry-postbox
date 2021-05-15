@@ -40,6 +40,7 @@ body, .raleway{
       display: flex;
       flex: 1;
       justify-content: center;
+      align-items: center;
   }
 
   nav ul li{
@@ -766,8 +767,7 @@ body, .raleway{
     }
 
     nav ul li{
-      margin-top: auto;
-      margin-bottom: auto;
+      margin: auto;
     }
 
     nav ul a {
