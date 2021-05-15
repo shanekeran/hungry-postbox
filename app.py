@@ -25,7 +25,7 @@ mongo = PyMongo(app)
 
 
 # Pagination functions.
-# Credit https://github.com/Edb83/self-isolution/blob/master/app.py
+# Credit to Edb83 (see README)
 
 PER_PAGE = 12  # Maximum 12 members displayed per page
 
@@ -60,9 +60,9 @@ def calculate_age(born):
 @app.route("/")
 @app.route("/home")
 def home_page():
-    # Credit to Stack Overflow user "dbam" https://stackoverflow.com/questions/2824157/random-record-from-mongodb
+    # Credit to Stack Overflow user "dbam" (see README)
     random_members = mongo.db.members.aggregate([{"$sample": {"size": 3}}])
-    
+
     return render_template("index.html", random_members=random_members,
                            calculate_age=calculate_age)
 
@@ -261,7 +261,7 @@ def contact(member_id):
     user = mongo.db.members.find_one({"username": session["user"]})
 
     # Email functionality
-    # Credit: LucidProgramming on YouTube (link in README)
+    # Credit: LucidProgramming on YouTube (see README)
     def send_email(subject, message):
         try:
             server = smtplib.SMTP("smtp.gmail.com:587")

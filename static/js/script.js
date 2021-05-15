@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.Carousel.init(elems, {duration: 300});
   });
 
-// Modal for member connect button
+// Modal for member connect button (Materialize)
 document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.modal');
   var instances = M.Modal.init(elems, {});

@@ -1,4 +1,4 @@
-  /*----- Fonts -----*/
+/*----- Fonts -----*/
 .handlee,  input:not([type=submit]){
   font-family: 'Handlee', cursive;
 }
@@ -163,7 +163,7 @@ body, .raleway{
   }
 
   #home-container{
-    width: 90vw!important; /* remove? */
+    width: 90vw!important;
     max-width: 1400px;
     margin: auto;
     text-align: center;
@@ -437,7 +437,7 @@ body, .raleway{
     font-size: 15px;
   }
 
-  /* envelope */
+  /* envelope - credit to asmaa-mohammed (See README) */
   .envelope{
     width:250px;
     height:140px;
@@ -501,6 +501,7 @@ body, .raleway{
     z-index: 4;
     transition: width 0.5s ease-in-out, height 0.5s ease-in-out ;
   }
+  /* end of envelope */
 
   /*----- Login.html -----*/
 
@@ -809,14 +810,11 @@ body, .raleway{
     }
 
     .carousel .carousel-item{
-     /* top: -19%;
-      left: -2%; */
       width: 200px;
       height: 200px;
     }
 
     #discover .card{
-      /*height: 350px;*/
       min-width: auto;
       max-width: fit-content;
       margin-left: 0px;
@@ -876,7 +874,6 @@ body, .raleway{
       left: 0%!important;
       transform: translateX(0%)!important;
     }
-
     /* end of envelope */
 
     #complete-form{
@@ -897,7 +894,7 @@ body, .raleway{
     }
 
     #profile-left>div{
-      height: 280px; /*change in MQ */
+      height: 280px;
     }
   
     #profile-left>div>div{
@@ -1042,7 +1039,6 @@ body, .raleway{
       left: 0%!important;
       transform: translateX(0%)!important;
     }
-
     /* end of envelope */
 
     .form-page label {

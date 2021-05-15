@@ -224,3 +224,45 @@ __
 __
 
 ### Code
+
+- W3Schools
+
+    * [Multi step form](https://www.w3schools.com/howto/howto_js_form_steps.asp)
+
+- Materialize
+
+    * [Carousel](https://materializecss.com/carousel.html)
+    * [Card](https://materializecss.com/cards.html#fab)
+    * [Pagination](https://materializecss.com/pagination.html)
+    * [Navigation bar](https://materializecss.com/navbar.html#center)
+
+- Hover.css
+
+    * [Hover rotate, grow and grow-shadow effects](https://ianlunn.github.io/Hover/)
+
+- Code Pen by asmaa-mohammed
+
+    * [Envelope template which was modified for my own use](https://codepen.io/asmaa-mohammed/pen/bWGKgd)
+
+- Edb83
+
+    * [Code for pagination](https://github.com/Edb83/self-isolution/blob/master/app.py)
+
+- Stack Overflow
+
+    * [Calculating age from DOB, helpful posts](https://stackoverflow.com/questions/22344244/age-calculator-in-python-from-date-mm-dd-yyyy-and-print-age-in-years-only)
+    * [Returning a random sample from a MongoDB collection](https://stackoverflow.com/questions/2824157/random-record-from-mongodb)
+
+- Lucid Programming on YouTube
+
+    * [How to send Emails with Python using Gmail](https://www.youtube.com/watch?v=mP_Ln-Z9-XY&ab_channel=LucidProgrammingLucidProgramming)
+
+- Code Institute
+
+    I relied on the Task manager mini project for the fundamentals of this project.
+
+### Acknowledgements
+
+- Tutor support in the Code Institute for their support. Particular shoutout to Jo this time.
+
+- My fellow students on Slack for their inspiration and help.
