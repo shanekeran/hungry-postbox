@@ -44,6 +44,7 @@ body, .raleway{
 
   nav ul li{
       padding: 0 5%;
+      white-space: nowrap;
   }
 
   .brand-logo {
@@ -774,7 +775,7 @@ body, .raleway{
     }
 
     .nav-text{
-      font-size: 14px;
+      font-size: 15px;
     }
 
     #home-logo{
@@ -929,7 +930,7 @@ body, .raleway{
     }
 
     .nav-text{
-      font-size: 17px;
+      font-size: 18px;
     }
 
     #home{
@@ -1093,7 +1094,7 @@ body, .raleway{
   @media only screen and (min-width: 1200px){
 
     .nav-text{
-      font-size: 19px;
+      font-size: 20px;
     }
 
     #home{
