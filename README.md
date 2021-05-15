@@ -65,7 +65,7 @@ Features to be introduced at a later date:
 - Filter member search by gender, country, age.
 - A built in messaging system.
 - Friends list
-
+- Admin users who can edit and delete inappropriate member profiles.
 
 ### Structure
 
