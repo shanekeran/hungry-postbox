@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     <section>
+        <!-- Modal regarding contacting users.-->
         <div id="modal1" class="modal">
             <div class="modal-content">
               <h4>Attention</h4>
@@ -11,6 +12,18 @@
             <div class="modal-footer">
               <a href="#" class="modal-close waves-effect waves-blue blue lighten-1 btn" id="cancel-contact">Cancel</a>
               <a href="{{ url_for('contact',  member_id=member.username) }}" class="modal-close waves-effect waves-red red accent-2 btn" id="confirm-contact">Agree</a>
+            </div>
+          </div>
+        <!-- Modal regarding deleting profile -->
+          <div id="modal2" class="modal">
+            <div class="modal-content">
+              <h4>Attention</h4>
+              <p>By clicking delete, your account will be <strong>permanently</strong> deleted.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <a href="#" class="modal-close waves-effect waves-blue blue lighten-1 btn">Cancel</a>
+              <a href="{{ url_for('delete_account', member_id = member._id) }}" class="modal-close waves-effect waves-red red accent-2 btn">Delete</a>
             </div>
           </div>
         <!-- Profile page heading-->
@@ -119,7 +132,7 @@
                             </a>
                         </div>
                         <div class="col s12 m6 center-align">
-                            <a href="{{ url_for('delete_account', member_id = member._id) }}" class="red accent-2 white-text hvr-grow-shadow" id="delete-profile">
+                            <a href="#modal2" class="red accent-2 white-text hvr-grow-shadow modal-trigger" id="delete-profile">
                                 Delete Acccount
                             </a>
                         </div>
