@@ -122,7 +122,7 @@ if(defaultButton){
       optionA[i].style.display = 'block';
     }
     input.style.visibility = "hidden" 
-    document.getElementById("picture").value = "../static/images/default-profile-pic.png" 
+    document.getElementById("picture").value = "https://i.imgur.com/8MovaTk.png" 
     });
 }
 
