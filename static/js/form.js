@@ -2,7 +2,7 @@
 
 // Date picker for registration form, displays over registration section.
 document.addEventListener('DOMContentLoaded', function() {
-  let registrationSection = document.getElementById("registration")
+  let registrationSection = document.getElementById("registration");
     var elems = document.querySelectorAll('.datepicker');
     var instances = M.Datepicker.init(elems, {format: 'dd/mm/yyyy',
                                               container: registrationSection, maxDate: new Date('01/01/2010'),
@@ -13,16 +13,16 @@ document.addEventListener('DOMContentLoaded', function() {
 // Function to prevent register form returning inside envelope container after hover
 function remainOpen() {
   const registerForm = document.getElementById("regForm");
-  registerForm.classList.add("letter-open")
+  registerForm.classList.add("letter-open");
   }
 
 // Multi step form, original code sourced from w3schools and modified (see README).
-var currentPage = 0;
+let currentPage = 0;
 showPage(currentPage); // Display the current page
 
 function showPage(n) {
   // This function will display the specified form page while the others are hidden
-  var pages = document.getElementsByClassName("form-page");
+  let pages = document.getElementsByClassName("form-page");
   pages[n].style.display = "block";
   
   // Prev/Next buttons
@@ -37,12 +37,12 @@ function showPage(n) {
     document.getElementById("nextBtn").innerHTML = "<i class='fas fa-chevron-circle-right'></i>";
   }
   // ... and run a function that displays the correct page indicator:
-  updateIndicators(n)
+  updateIndicators(n);
 }
 
 function nextPrev(n) {
   // This function will figure out which tab to display
-  var pages = document.getElementsByClassName("form-page");
+  let pages = document.getElementsByClassName("form-page");
   // Exit the function if any field in the current tab is invalid:
   if (n == 1 && !validateForm()) return false;
   // Hide the current tab:
@@ -61,11 +61,11 @@ function nextPrev(n) {
 
 function validateForm() {
   // This function deals with validation of the form fields
-  var form, formInputs, valid = true;
+  let form, formInputs, valid = true;
   form = document.getElementsByClassName("form-page");
   formInputs = form[currentPage].getElementsByTagName("input");
   // A loop that checks every input field in the current tab:
-  for (i = 0; i < formInputs.length; i++) {
+  for (let i = 0; i < formInputs.length; i++) {
     // If a field is empty: valid is set to false to prevent user from advancing.
     if (formInputs[i].value == "" || formInputs[i].validity.tooShort) {
       valid = false;
@@ -84,8 +84,8 @@ function validateForm() {
 
 function updateIndicators(n) {
   // Removes the "active" class off all steps...
-  var indicator = document.getElementsByClassName("indicator");
-  for (i = 0; i < indicator.length; i++) {
+  let indicator = document.getElementsByClassName("indicator");
+  for ( let i = 0; i < indicator.length; i++) {
     indicator[i].className = indicator[i].className.replace(" active fas fa-dot-circle", "");
   }
   //... and adds the "active" class to the current step:
@@ -93,50 +93,53 @@ function updateIndicators(n) {
 }
 
 // Shows URL input when user selects that they wish to customise their profile picture
-const customiseButton = document.getElementById("customise-button")
-var optionB = document.getElementsByClassName("customise")
-var optionA = document.getElementsByClassName("default")
-var input = document.getElementById("url")
+const customiseButton = document.getElementById("customise-button");
+let optionB = document.getElementsByClassName("customise");
+let optionA = document.getElementsByClassName("default");
+let input = document.getElementById("url");
 
 if(customiseButton){  
   customiseButton.addEventListener('click', function() {
-    for (var i=0;i<optionB.length;i+=1){
+    let i;
+    for (i=0;i<optionB.length;i+=1){
       optionB[i].style.display = 'block';
     }
-    for (var i=0;i<optionA.length;i+=1){
+    for (i=0;i<optionA.length;i+=1){
       optionA[i].style.display = 'none';
     }
-    input.style.visibility = "visible" 
-    document.getElementById("picture").value = ""  
+    input.style.visibility = "visible" ;
+    document.getElementById("picture").value = ""  ;
   });
 }
 
 // Hides URL input when user reselects the option to use the default profile picture
-const defaultButton = document.getElementById('default-button')
+const defaultButton = document.getElementById('default-button');
 if(defaultButton){
   defaultButton.addEventListener('click', function() {
-    for (var i=0;i<optionB.length;i+=1){
+    let i;
+    for (i=0;i<optionB.length;i+=1){
       optionB[i].style.display = 'none';
     }
-    for (var i=0;i<optionA.length;i+=1){
+    for (i=0;i<optionA.length;i+=1){
       optionA[i].style.display = 'block';
     }
-    input.style.visibility = "hidden" 
-    document.getElementById("picture").value = "https://i.imgur.com/8MovaTk.png" 
+    input.style.visibility = "hidden" ;
+    document.getElementById("picture").value = "https://i.imgur.com/8MovaTk.png";
     });
 }
 
 // Edit profile
-const changeButton = document.getElementById('change-button')
+const changeButton = document.getElementById('change-button');
 if(changeButton){
   changeButton.addEventListener('click', function() {
-    for (var i=0;i<optionB.length;i+=1){
+    let i;
+    for (i=0;i<optionB.length;i+=1){
       optionB[i].style.display = 'block';
     }
-    for (var i=0;i<optionA.length;i+=1){
+    for (i=0;i<optionA.length;i+=1){
       optionA[i].style.display = 'none';
     }
-    input.style.visibility = "visible" 
+    input.style.visibility = "visible" ;
     document.getElementById("picture").value = "";
   });
 }
