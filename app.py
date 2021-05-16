@@ -221,7 +221,7 @@ def profile(username):
 
 @app.route("/delete_account/<member_id>")
 def delete_account(member_id):
-    mongo.db.members.remove({"_id": ObjectId(member_id)})
+    mongo.db.members.delete_one({"_id": ObjectId(member_id)})
     session.clear()  # logs out user
     flash("Account Successfully Deleted")
     return redirect(url_for("home_page",_external=True, _scheme="https"))
