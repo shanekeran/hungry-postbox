@@ -91,17 +91,17 @@
                         <div class="row">
                             <!-- Age -->
                             <div class="col s12 m4">
-                                <h3>Age</h3>
+                                <h2>Age</h2>
                                 <span>{{ calculate_age(member.dob) }} years old</span>
                             </div>
                             <!-- Gender -->
                             <div class="col s12 m4">
-                                <h3>Gender</h3>
+                                <h2>Gender</h2>
                                 <span>{{ member.gender|upper}}</span>
                             </div>
                             <!-- Nationality -->
                             <div class="col s12 m4">
-                                <h3>Nationality</h3>
+                                <h2>Nationality</h2>
                                 <span>{{ member.nationality }}</span>
                             </div>
                         </div>
@@ -113,12 +113,12 @@
                         <legend>Description</legend>
                         <!-- About me-->
                         <div class="col s12 m6">
-                            <h3>About me</h3>
+                            <h2>About me</h2>
                             <p> {{ member.description }}</p>
                         </div>
                         <!-- Looking for-->
                         <div class="col s12 m6">
-                            <h3>I'm looking for:</h3>
+                            <h2>I'm looking for:</h2>
                             <p> {{ member.looking_for }}</p>
                         </div>
                     </fieldset>
