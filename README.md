@@ -35,7 +35,6 @@ I used user stories and the five planes of user experience design as a framework
 - Provide a platform for users who to find new pen pals.
 - Promote my brand throughout the site, including links to our social media accounts.
 - Provide clarity to the user on the purpose of the website.
-- Allow users to independently create, edit and delete their accounts without the need to contact the site owner.
 - Display visual feedback to the user based on actions they take on the website.
 
 
@@ -195,8 +194,9 @@ __
     Hover.css classes were used to apply custom hover effects to buttons.
 
 ## Testing
-__
+___
 
+Please find all testing documentation in my [TESTING.md file](/TESTING.md)
 
 ### Validation
 
@@ -204,7 +204,7 @@ The W3C Markup Validator, W3C CSS Validator and jshint were used to validate my 
 
 
 ## Deployment
-__
+___
 
 ### Heroku
 
