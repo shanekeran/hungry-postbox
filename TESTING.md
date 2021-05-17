@@ -81,6 +81,7 @@ The W3C Markup Validator, W3C CSS Validator and JSHint were used to validate my 
 - HTML Validator - PASS
 - CSS Validator - PASS
 -  JSHint - PASS
+- PEP8 online check - PASS
 
 ## Lighthouse
 ___
