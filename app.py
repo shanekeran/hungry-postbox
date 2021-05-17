@@ -112,6 +112,8 @@ def register():
 
 @app.route("/edit_profile/<member_id>", methods=["GET", "POST"])
 def edit_profile(member_id):
+    if "user" not in session:
+        return redirect(url_for("login"))
     if request.method == "POST":
         # checks for existing username on db
         existing_member = mongo.db.members.find_one(
@@ -201,6 +203,8 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    if "user" not in session:
+        return redirect(url_for("login"))
     if session["user"]:
 
         # Retrieve the session user's username from db
@@ -234,6 +238,8 @@ def logout():
 
 @app.route("/members")
 def members():
+    if "user" not in session:
+        return redirect(url_for("login"))
     # Retrieves all members from db, sorted newest to oldest
     members = list(mongo.db.members.find().sort('_id', -1))
     # Paginates results
@@ -246,6 +252,8 @@ def members():
 
 @app.route("/member_profile/<member_id>")
 def member_profile(member_id):
+    if "user" not in session:
+        return redirect(url_for("login"))
     member = mongo.db.members.find_one({"username": member_id})
 
     return render_template("profile.html", member=member,
