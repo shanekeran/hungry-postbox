@@ -73,6 +73,50 @@ ___
 ## Issues and Bugs during development
 ___
 
+## Manual Testing
+
+### Home / About
+
+- Click on all nav bar links to confirm they take the user to the correct page.
+- Click on both "Register now!" CTA buttons
+- Click on Member carousel to test if it spins in both directions.
+- Click 3 social media icons in the footer to ensure they link to external sites which open in a new tab.
+
+### Register
+
+- Click "Already a member? Log in." link to ensure it takes users to the login page.
+- Hover over envelope to test if the form displays fully.
+- Move mouse off form to ensure it remains displayed fully.
+- Enter username and password below required number of characters to test validation.
+- Try to type more than the maximum number of characters in the username and password field.
+- Enter an email with the incorrect format to test validation.
+- Click on form next page button with empty fields to test validation.
+- Click on next page button, with all fields inputted to test progress bar changes to green tick and next page gets displayed.
+- Enter less than required characters in "Country of Residence" and "Nationality" fields to test validation.
+- Test maximum characters can be reached in "About you" and "Looking for" text areas.
+- Select register without adding custom profile picture to test that default picture is applied.
+- Enter custom image url to test custom image is displayed as profile picture.
+- Enter incorrect url format to custom image url. <strong>FAIL</strong>
+- Enter email address that is already in use while registering to test validation and flash message on click of register button.
+
+### Login
+
+- Enter incorrect username to test validation and flash message displays.
+- Enter correct username but incorrect password to validation and flash message displays.
+- Enter correct login details to ensure user is redirected to their profile.
+- Click Register link to test that it takes the user to the register page.
+
+### Profile
+
+
+### Edit Profile
+
+
+### Members
+
+
+### Log out
+
 ## Validation
 ___
 
