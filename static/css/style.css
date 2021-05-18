@@ -307,7 +307,6 @@ body, .raleway{
   #registration{
     height: 85vh;
     min-height: 380px;
-    width: 100vw;
   }
 
   #registration p, #login-container p{

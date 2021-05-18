@@ -32,7 +32,7 @@ function showPage(n) {
     document.getElementById("prevBtn").style.display = "inline";
   }
   if (n == (pages.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "<span id='complete-form' class='valign-wrapper'>Register</span>"; // on the last page, this replaces the next icon.
+    document.getElementById("nextBtn").innerHTML = "<span id='complete-form' class='valign-wrapper'>Submit</span>"; // on the last page, this replaces the next icon.
   } else {
     document.getElementById("nextBtn").innerHTML = "<i class='fas fa-chevron-circle-right'></i>";
   }

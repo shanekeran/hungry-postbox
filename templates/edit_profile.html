@@ -2,6 +2,8 @@
 {% block content %} 
 
 <section id="registration">
+    <h1 class="teal-text center-align flow-text">Edit your Profile</h1>
+    <p class="teal-text center-align">Change your mind? <a href="{{ url_for('profile', username=session['user']) }}">Cancel.</a></p>
     <!-- flash messages displayed here-->
     {% with messages = get_flashed_messages() %}
         {% if messages %}

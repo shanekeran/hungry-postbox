@@ -167,12 +167,14 @@ def edit_profile(member_id):
                                 _external=True, _scheme="https"))
 
     member = mongo.db.members.find_one({"_id": ObjectId(member_id)})
-
+    
     return render_template("edit_profile.html", member=member)
 
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    if "user" in session:
+        flash("Hey, you're already logged in!")
     if request.method == "POST":
         # Checks if the username is already in use
         existing_member = mongo.db.members.find_one(
