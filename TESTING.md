@@ -94,10 +94,10 @@ ___
 - Click on next page button, with all fields inputted to test progress bar changes to green tick and next page gets displayed.
 - Enter less than required characters in "Country of Residence" and "Nationality" fields to test validation.
 - Test maximum characters can be reached in "About you" and "Looking for" text areas.
-- Select register without adding custom profile picture to test that default picture is applied.
+- Submit without adding custom profile picture to test that default picture is applied.
 - Enter custom image url to test custom image is displayed as profile picture.
 - Enter incorrect url format to custom image url. <strong>FAIL</strong>
-- Enter email address that is already in use while registering to test validation and flash message on click of register button.
+- Enter email address that is already in use while registering to test validation and flash message on click of submit button.
 
 ### Login
 
@@ -105,12 +105,23 @@ ___
 - Enter correct username but incorrect password to validation and flash message displays.
 - Enter correct login details to ensure user is redirected to their profile.
 - Click Register link to test that it takes the user to the register page.
+- After Login, test the browser back button to ensure the user remains logged in and a flash message displays.
 
 ### Profile
 
+- Hover over Edit and Delete buttons to check hover styling is applied.
+- Click Edit profile button to test user is brought to edit_profile page.
+- Click Delete account to test that modal is displayed.
+- Click "Cancel" button in modal to test that modal closes and user account remains unchanged.
+- Click "Delete" button to ensure user profile is properly deleted.
+- After deleting profile, test the browser back button to ensure user is not still logged in.
 
 ### Edit Profile
 
+- Check all fields to make sure they have been automatically populated with the user's information (except password).
+- Perform same steps as above registration testing. (Same result)
+- Edit each field with a different value and click submit to test all values update on user's profile.
+- Click cancel button to ensure user is brought back to profile page and no values have been updated.
 
 ### Members
 
