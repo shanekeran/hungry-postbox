@@ -125,8 +125,25 @@ ___
 
 ### Members
 
+- Hover over search bar buttons and profile buttons on member cards to make sure hover styling is applied.
+- Search for a user that doesn't exist to ensure "No members found" text is displayed.
+- Click Reset button to ensure member cards are reloaded and search bar is cleared.
+- Enter existing username into search bar to ensure expected member card is displayed.
+- Click number 2 of pagination links to ensure it displays the second results page.
+- Click number 1 of pagination links to ensure it displays the first results page.
+- Click the previous/next icons to make sure they work when the option is available to go forward/back pages.
+- Click profile button on member cards to check if it brings the user to the member's profile.
+
+### Member Profile
+
+- Click "Contact" button on member profile to ensure modal is presented.
+- Click "Cancel" button in modal to test that modal closes and member is not contacted.
+- Click "Agree" button to test email delivery and that the user is redirected to the home page with a flash message displayed.
 
 ### Log out
+
+- Click "Log out" to ensure user is properly logged out and is redirected to the login page with a flash message displayed.
+- Press the back browser button to ensure user is not logged back in.
 
 ## Validation
 ___
