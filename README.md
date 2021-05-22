@@ -117,16 +117,35 @@ I used Balsamiq to create a wireframe for each device. The wireframes were creat
 
 My main colour theme is a mix of #4db6ac and white. I chose #ff5252 for most of the buttons as it works well with the main colours.
 
-![Main colour 1](wireframes/color1.PNG)
-![Main colour 2](wireframes/color2.PNG)
-![Button colour](wireframes/color3.PNG)
+![Main colour 1](wireframes/colours/color1.PNG)
+![Main colour 2](wireframes/colours/color2.PNG)
+![Button colour](wireframes/colours/color3.PNG)
 
 #### Typography
 
 I chose the Raleway font for my text because of its nice design and readability. In keeping with the hand-written letters theme of the website, I also used the handlee font to make certain text appear in a handwritten style. I specified Sans-Serif and Cursive to be used in their place if Google Fonts is unavailable.
 
+### Logo
+
+The following images show the progression of the Hungry Postbox logo.
+
+![First draft of our logo](wireframes/logos/first-draft-logo-1.PNG)
+
+![Second draft of our logo](wireframes/logos/first-draft-logo.PNG)
+
+![Final design of our logo](static/images/hp-logo.png)
+
+## Database
+For this project I used MongoDB as my Database
+
+### Database schema
+My Database schema is extremely simple, it uses only one members collection which stores all the information required on the registration form. When I have time to expand on the initial application, I'll be implementing admin users and friends lists which will require additional collections within my database cluster.
+
+![MongoDB database schema](wireframes/schema.PNG)
+
+
 ## Technologies Used
-__
+___
 
 ### Languages
 
@@ -198,11 +217,6 @@ ___
 
 Please find all testing documentation in my [TESTING.md file](/TESTING.md)
 
-### Validation
-
-The W3C Markup Validator, W3C CSS Validator and jshint were used to validate my code to ensure no syntax errors were overlooked. My Python code was checked to make sure it met PEP8 standards.
-
-
 ## Deployment
 ___
 
@@ -260,6 +274,10 @@ __
 - Code Institute
 
     I relied on the Task manager mini project for the fundamentals of this project.
+
+- ryadel.com
+
+    * [Code used to target the Safari browser in order to fix alignment issues on the navigation bar on Safari.](https://www.ryadel.com/en/css3-media-query-target-only-ie-ie6-ie11-firefox-chrome-safari-edge/)
 
 ### Acknowledgements
 
