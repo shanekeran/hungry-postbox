@@ -633,9 +633,10 @@ body, .raleway{
     text-align: center;
   }
 
-  #contact-btn{
+  .member-profile-btn{
     width: 80%;
     max-width: 250px;
+    margin: 5px 0px;
   }
 
   /*----- Members -----*/

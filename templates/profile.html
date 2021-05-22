@@ -74,8 +74,11 @@
                                     <span>{{ member.email }}</span>
                                 </div>
                             {% else %}
-                                <a href="#modal1" class="btn red accent-2 waves-effect waves-light modal-trigger" id="contact-btn">
+                                <a href="#modal1" class="btn red accent-2 waves-effect waves-light modal-trigger member-profile-btn">
                                     Contact
+                                </a><br>
+                                <a href="{{ url_for('members')}}" class="btn blue lighten-1 waves-effect waves-light member-profile-btn">
+                                    Back to search
                                 </a>
                             {% endif %}
                         </div>
