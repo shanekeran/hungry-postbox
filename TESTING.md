@@ -81,6 +81,13 @@ Ocassionaly when a new user loads the Register page, the form fields will not fu
 ![Image of Register form not fully loaded](wireframes/form-load-issue.PNG)
 </details>
 
+### No profile pic if user enters incorrect url when choosing their picture : Unresolved
+If a user enters an incorrect URL such as hello or facebook.com as their profile picture URL then no image will display. Until this can be fixed, the user has the option to edit their profile and try a different URL.
+<details><summary>Click here to display image</summary>
+
+![Profile picture not displaying on member profile](wireframes/incorrect-url.PNG)
+</details>
+
 ### Navigation bar menu items colliding with the Nav bar logo on smaller devices : Resolved
 
 This was resolved by decreasing the size of the Navigation bar logo and inserting some left / right margin on the menu items to keep them away from the center.
@@ -95,6 +102,14 @@ This was resolved by decreasing the size of the Navigation bar logo and insertin
 Initially I calculated years old after the user submitted their DOB on the registration form and pushed that to the database. Then I realised their age would never update as they got older. It also gave trouble with inserted values in the edit profile page as I couldn't reconvert the age to DOB to be pre-filled in the date-picker.
 Resolved by creating an age calculator and used jinja to change values from DOB to years old on page load.
 
+### Navigation bar menu items alignment issues on Safari : Resolved
+
+While doing browser testing, I discovered that the nav bar menu items were bunched together and something overlapping the nav bar. I fixed this by targeting the safari browser and applying margin-auto on all menu items.
+
+<details><summary>Click here to display image</summary>
+
+![Image of Nav bar logo covering navigation bar text](wireframes/safari2.jpg)
+</details>
 
 
 ## Manual Testing
