@@ -73,6 +73,30 @@ ___
 ## Issues and Bugs during development
 ___
 
+### Register form not fully loading : Unresolved
+
+Ocassionaly when a new user loads the Register page, the form fields will not fully load for a few seconds as seen in the image below. This issue is still unresolved but occurs infrequently and doesn't impact the functioning of the site.
+<details><summary>Click here to display image</summary>
+
+![Image of Register form not fully loaded](wireframes/form-load-issue.PNG)
+</details>
+
+### Navigation bar menu items colliding with the Nav bar logo on smaller devices : Resolved
+
+This was resolved by decreasing the size of the Navigation bar logo and inserting some left / right margin on the menu items to keep them away from the center.
+
+<details><summary>Click here to display image</summary>
+
+![Image of Nav bar logo covering navigation bar text](wireframes/nav-overlap.PNG)
+</details>
+
+### Date of Birth values displayed on member profiles instead of x years old : Resolved
+
+Initially I calculated years old after the user submitted their DOB on the registration form and pushed that to the database. Then I realised their age would never update as they got older. It also gave trouble with inserted values in the edit profile page as I couldn't reconvert the age to DOB to be pre-filled in the date-picker.
+Resolved by creating an age calculator and used jinja to change values from DOB to years old on page load.
+
+
+
 ## Manual Testing
 
 ### Home / About
