@@ -1,4 +1,5 @@
 # Hungry Postbox: Testing
+<span id="top"></span>
 
 ## Testing the User Stories
 ___
@@ -40,8 +41,10 @@ ___
 
 -  Werkzeug generate_password_hash is used to securely store user passwords and prevent any unauthorised access.
 </details>
+<br/>
 
 ### Site Owner
+<br/>
 
 <details><summary>Provide a platform for users who to find new pen pals.</summary>
 
@@ -73,22 +76,24 @@ ___
 ## Issues and Bugs during development
 ___
 
-### Register form not fully loading : Unresolved
+### Register form not fully loading : <span style="color: red;">Unresolved</span>
 
 Ocassionaly when a new user loads the Register page, the form fields will not fully load for a few seconds as seen in the image below. This issue is still unresolved but occurs infrequently and doesn't impact the functioning of the site.
 <details><summary>Click here to display image</summary>
 
 ![Image of Register form not fully loaded](wireframes/form-load-issue.PNG)
 </details>
+<br/>
 
-### No profile pic if user enters incorrect url when choosing their picture : Unresolved
-If a user enters an incorrect URL such as hello or facebook.com as their profile picture URL then no image will display. Until this can be fixed, the user has the option to edit their profile and try a different URL.
+### No profile pic if user enters incorrect url when choosing their picture : <span style="color: red;">Unresolved</span>
+If a user enters an incorrect URL such as hello or "facebook .com" as their profile picture URL then no image will display. Until this can be fixed, the user has the option to edit their profile and try a different URL.
 <details><summary>Click here to display image</summary>
 
 ![Profile picture not displaying on member profile](wireframes/incorrect-url.PNG)
 </details>
+<br/>
 
-### Navigation bar menu items colliding with the Nav bar logo on smaller devices : Resolved
+### Navigation bar menu items colliding with the Nav bar logo on smaller devices : <span style="color: green;">Resolved</span>
 
 This was resolved by decreasing the size of the Navigation bar logo and inserting some left / right margin on the menu items to keep them away from the center.
 
@@ -96,13 +101,15 @@ This was resolved by decreasing the size of the Navigation bar logo and insertin
 
 ![Image of Nav bar logo covering navigation bar text](wireframes/nav-overlap.PNG)
 </details>
+<br/>
 
-### Date of Birth values displayed on member profiles instead of x years old : Resolved
+### Date of Birth values displayed on member profiles instead of x years old : <span style="color: green;">Resolved</span>
 
 Initially I calculated years old after the user submitted their DOB on the registration form and pushed that to the database. Then I realised their age would never update as they got older. It also gave trouble with inserted values in the edit profile page as I couldn't reconvert the age to DOB to be pre-filled in the date-picker.
 Resolved by creating an age calculator and used jinja to change values from DOB to years old on page load.
 
-### Navigation bar menu items alignment issues on Safari : Resolved
+
+### Navigation bar menu items alignment issues on Safari : <span style="color: green;">Resolved</span>
 
 While doing browser testing, I discovered that the nav bar menu items were bunched together and something overlapping the nav bar. I fixed this by targeting the safari browser and applying margin-auto on all menu items.
 
@@ -110,7 +117,7 @@ While doing browser testing, I discovered that the nav bar menu items were bunch
 
 ![Image of Nav bar logo covering navigation bar text](wireframes/safari2.jpg)
 </details>
-
+<br/>
 
 ## Manual Testing
 
@@ -207,3 +214,5 @@ Hungry Postbox was checked on the latest versions of Microsoft Edge, Google Chro
 ## Responsive Testing
 
 I used https://www.responsinator.com/ and the chrome extension Responsive Viewer to test Hungry Postbox on a variety of screen sizes and orientations. All tests were successful, with the site retaining its function and design across the different device simulations.
+
+<a href="#top">Back to top.</a>
