@@ -7,19 +7,24 @@ Hungry Postbox is a full-stack application that allows site users to create an a
 
 ![mockup of the website on different devices](wireframes/amiresponsive.png)
 
-## Table of Contents
->1. [User Experience]()
->2. [Testing]()
->3. [Deployment]()
->4. [Credits]()
+<span id="top"></span>
 
+## Table of Contents
+>1. [User Experience](#ux)
+>2. [Database](#database)
+>3. [Technology](#tech)
+>4. [Testing](#testing)
+>5. [Deployment](#deployment)
+>6. [Credits](#credits)
+
+<span id="ux"></span>
 ## User Experience (UX)
 ___
-### Overview
+### **Overview**
 
 I used user stories and the five planes of user experience design as a framework for planning the project.
 
-### User Stories
+### **User Stories**
 
 *As a site user, I want to*
 
@@ -38,7 +43,7 @@ I used user stories and the five planes of user experience design as a framework
 - Display visual feedback to the user based on actions they take on the website.
 
 
-### Strategy
+### **Strategy**
 
 
 The purpose of the website is to allow users to discover members of the site who are interested in communicating offline through letter writing. The target market of Hungry Postbox is not limited by age but it does focus on people who are either looking from a break from conventional social media or those who could never understand it in the first place.
@@ -51,7 +56,7 @@ The first business goal which the website must fulfil is to increase brand aware
 The second business goal is to continually grow the userbase through website signups. This can be achieved by strategically placing CTA buttons on the home page to intice new visitors to register an account with us.
 
 
-### Scope
+### **Scope**
 
 Features to be included on the website are:
 - Photo carousel of user profiles on the home page. This is to give first time visitors a basic insight into some member profiles.
@@ -66,7 +71,7 @@ Features to be introduced at a later date:
 - Friends list
 - Admin users who can edit and delete inappropriate member profiles.
 
-### Structure
+### **Structure**
 
 Hungry Postbox is a multi-page website, with certain pages only accessible to users that are logged in.
 
@@ -99,7 +104,7 @@ Hungry Postbox is a multi-page website, with certain pages only accessible to us
     This page is where users can view and search for other member profiles with the goal of finding a pen pal. Member profiles are displayed as cards, which contain an button to view their full profile. Member cards are paginated so each page contains a maximum on 12 member profiles. The search bar allows you to search for members by username.
 
 
-### Skeleton
+### **Skeleton**
 
 I used Balsamiq to create a wireframe for each device. The wireframes were created in the planning stage, so the current version differs slightly.
 
@@ -111,7 +116,7 @@ I used Balsamiq to create a wireframe for each device. The wireframes were creat
 
 [Wireframe - Members](wireframes/members-wireframe.png)
 
-### Surface
+### **Surface**
 
 #### Colour
 
@@ -125,7 +130,7 @@ My main colour theme is a mix of #4db6ac and white. I chose #ff5252 for most of 
 
 I chose the Raleway font for my text because of its nice design and readability. In keeping with the hand-written letters theme of the website, I also used the handlee font to make certain text appear in a handwritten style. I specified Sans-Serif and Cursive to be used in their place if Google Fonts is unavailable.
 
-### Logo
+### **Logo**
 
 The following images show the progression of the Hungry Postbox logo.
 
@@ -135,26 +140,31 @@ The following images show the progression of the Hungry Postbox logo.
 
 ![Final design of our logo](static/images/hp-logo.png)
 
+<a href="#top">Back to top.</a>
+<span id="database"></span>
+
 ## Database
+___
 For this project I used MongoDB as my Database
 
-### Database schema
+### **Database schema**
 My Database schema is extremely simple, it uses only one members collection which stores all the information required on the registration form. When I have time to expand on the initial application, I'll be implementing admin users and friends lists which will require additional collections within my database cluster.
 
 ![MongoDB database schema](wireframes/schema.PNG)
 
+<span id="tech"></span>
 
 ## Technologies Used
 ___
 
-### Languages
+### **Languages**
 
 - HTML5
 - CSS3
 - JavaScript
 - Python
 
-### Frameworks, Libraries & Programs used
+### **Frameworks, Libraries & Programs used**
 
 1. Git
 
@@ -212,15 +222,55 @@ ___
 
     Hover.css classes were used to apply custom hover effects to buttons.
 
+<a href="#top">Back to top.</a>
+<span id="testing"></span>
+
 ## Testing
 ___
 
 Please find all testing documentation in my [TESTING.md file](/TESTING.md)
 
+<span id="Deployment"></span>
+
 ## Deployment
 ___
 
-### Heroku
+### **How to clone Hungry Postbox**
+
+To clone this project from its [GitHub repository](https://github.com/shanekeran/hungry-postbox):
+
+1. From the repository, click **Code**
+2. In the **Clone >> HTTPS** section, copy the clone URL for the repository
+3. In your local IDE open Git Bash
+4. Change the current working directory to the location where you want the cloned directory to be made
+5. Type `git clone`, and then paste the URL you copied in Step 2
+
+```console
+git clone https://github.com/shanekeran/hungry-postbox.git
+```
+
+6. Press Enter. Your local clone will be created
+7. Create a file called env.py to hold your app's environment variables, which should contain the following:
+
+```console
+import os
+
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", "<app secret key></app>")
+os.environ.setdefault("MONGO_URI", "mongodb+srv://<username>:<password>@<cluster_name>-ofgqg.mongodb.net/<database_name>retryWrites=true&w=majority")
+os.environ.setdefault("MONGO_DBNAME", "<database name>")
+os.environ.setdefault("EMAIL_ADDRESS", "<sender email address>")
+os.environ.setdefault("PASSWORD", "<email address password></email>")
+```
+8. env.py must be listed in your .gitignore file to prevent your environment variables being pushed publicly
+9. The app can now be run locally using
+
+```console
+python3 app.py
+```
+
+### **Heroku**
 
 1. Navigated to [Heroku](https://www.heroku.com/)
 2. Signed into my Heroku account. 
@@ -234,10 +284,13 @@ ___
 10. Then clicked on "Deploy Branch" also with master selected.
 11. Site is deployed and any changes are automatically deployed each time they are updated and pushed to GitHub during development.
 
-## Credits
-__
+<a href="#top">Back to top.</a>
+<span id="credits"></span>
 
-### Code
+## Credits
+___
+
+### **Code**
 
 - W3Schools
 
@@ -273,9 +326,9 @@ __
 
 - Code Institute
 
-    I relied on the Task manager mini project for the fundamentals of this project.
+    * I relied on the Task manager mini project for the fundamentals of this project.
 
-- ryadel.com
+- ryadel (website)
 
     * [Code used to target the Safari browser in order to fix alignment issues on the navigation bar on Safari.](https://www.ryadel.com/en/css3-media-query-target-only-ie-ie6-ie11-firefox-chrome-safari-edge/)
 
@@ -284,3 +337,5 @@ __
 - Tutor support in the Code Institute for their support. Particular shoutout to Jo this time.
 
 - My fellow students on Slack for their inspiration and help.
+
+<a href="#top">Back to top.</a>
