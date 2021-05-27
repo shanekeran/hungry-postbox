@@ -128,7 +128,7 @@ if(defaultButton){
     });
 }
 
-// Edit profile
+// Edit profile - shows / hides input field based on whether user wants to change their profile pic.
 const changeButton = document.getElementById('change-button');
 if(changeButton){
   changeButton.addEventListener('click', function() {

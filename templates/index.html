@@ -21,6 +21,7 @@
                         {% endif %}
                     {% endwith %}
                     <h1>Connect with people across the globe through handwritten letters.</h1><br>
+                    <!-- CTA text changes if the user is logged in or not-->
                     {% if session.user %}
                         <a href="{{ url_for('members') }}" class="hvr-grow-shadow register-buttons">Find a PenPal</a>
                     {% else %}
@@ -127,6 +128,7 @@
             <!-- Call to action-->
             <div class="container">
                 <h2>Discover interesting people and exchange stories</h2>
+                <!-- CTA text changes if the user is logged in or not-->
                 {% if session.user %}
                     <a href="{{ url_for('members') }}" class="hvr-grow-shadow register-buttons">Find a PenPal</a>
                 {% else %}

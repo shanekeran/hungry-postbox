@@ -3,6 +3,7 @@
 
 <section id="registration">
     <h1 class="teal-text center-align flow-text">Edit your Profile</h1>
+    <!-- Users can click this link if they don't want to edit their profile-->
     <p class="teal-text center-align">Change your mind? <a href="{{ url_for('profile', username=session['user']) }}">Cancel.</a></p>
     <!-- flash messages displayed here-->
     {% with messages = get_flashed_messages() %}
@@ -111,7 +112,8 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col s12">
+                        <div class="col s12"> 
+                            <!-- displays certain buttons based on whether user has the default picture/ no picture or using a custom picture already-->
                             {% if member.picture == "" or member.picture == "../static/images/default-profile-pic.png"  %}
                                 <span id="customise-button" class="default picture-button">Customise Profile picture</span>
                                 <span id="default-button" class="customise picture-button">Use Default Profile picture</span>

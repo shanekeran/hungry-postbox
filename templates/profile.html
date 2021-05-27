@@ -64,7 +64,7 @@
                                 <span>{{ member.country|capitalize }}</span>
                             </div>
                         </div>
-                        <!-- Email address -->
+                        <!-- Email address displayed for logged in user, otherwise its a contact button -->
                         <div class="row center-align">
                             {% if session.user == member.username %}
                                 <div class="col s4 l5 right-align">
