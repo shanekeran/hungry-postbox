@@ -53,7 +53,7 @@ After reviewing competitor websites, I noted that the main pen pal websites are 
 The strategy for the project is to implement the needs previously outlined in the user stories and to also meet the business goals.
 
 The first business goal which the website must fulfil is to increase brand awareness of the Hungry Postbox brand. This can be achieved by displaying a large logo on the home page and smaller logos in the navigation and footer of each page. Users will be able to follow our other social media accounts through links in the footer of each page, allowing them to connect with us further if they wish.
-The second business goal is to continually grow the userbase through website signups. This can be achieved by strategically placing CTA buttons on the home page to intice new visitors to register an account with us.
+The second business goal is to continually grow the userbase through website signups. This can be achieved by strategically placing CTA buttons on the home page to entice new visitors to register an account with us.
 
 
 ### **Scope**
@@ -334,7 +334,7 @@ ___
 
 ### Acknowledgements
 
-- Tutor support in the Code Institute for their support. Particular shoutout to Jo this time.
+- Tutor support in the Code Institute for their support. Particular shout-out to Jo this time.
 
 - My fellow students on Slack for their inspiration and help.
 

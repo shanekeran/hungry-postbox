@@ -29,7 +29,7 @@ ___
 
 - Users can edit their profiles from within their profile page without the need for the site owner to assist.
 - Users can edit everything they originally entered into the registration form and this new information will be updated.
-- Users can also delete their profiles from their profile page. Defensive programming was used to turn this into a 2 step process so users don't accidently delete their account.
+- Users can also delete their profiles from their profile page. Defensive programming was used to turn this into a 2 step process so users don't accidentally delete their account.
 </details>
 
 <details><summary>Contact other members who I would like to become pen pals with and likewise for them to be able to contact me.</summary>
@@ -48,7 +48,7 @@ ___
 
 <details><summary>Provide a platform for users who to find new pen pals.</summary>
 
-- Users can register, search through member profiles and contact them so I believe this has been achieved.
+- Users can register, search through member profiles and contact them, so I believe this has been achieved.
 </details>
 
 <details><summary>Promote my brand throughout the site, including links to our social media accounts.</summary>
@@ -78,7 +78,7 @@ ___
 
 ### Register form not fully loading : <span style="color: red;">Unresolved</span>
 
-Ocassionaly when a new user loads the Register page, the form fields will not fully load for a few seconds as seen in the image below. This issue is still unresolved but occurs infrequently and doesn't impact the functioning of the site.
+Occasionally when a new user loads the Register page, the form fields will not fully load for a few seconds as seen in the image below. This issue is still unresolved but occurs infrequently and doesn't impact the functioning of the site.
 <details><summary>Click here to display image</summary>
 
 ![Image of Register form not fully loaded](wireframes/form-load-issue.PNG)
@@ -204,7 +204,7 @@ The W3C Markup Validator, W3C CSS Validator and JSHint were used to validate my 
 ## Lighthouse
 ___
 
-Google lighthouse was ran on every page of the website. Overall I was happy with the result of nearly every page giving back scores between 90 - 100. The home page, profile and member page had some results dip down to 87 - 90 but I'm still happy with the feedback.
+Google lighthouse was ran on every page of the website. Overall I was happy with the result of nearly every page giving back scores between 90 - 100. The home page, profile and member page had some results dip down to between 87 - 90 but I'm still happy with the feedback.
 
 
 ## Browser Testing
