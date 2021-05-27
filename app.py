@@ -167,7 +167,7 @@ def edit_profile(member_id):
                                 _external=True, _scheme="https"))
 
     member = mongo.db.members.find_one({"_id": ObjectId(member_id)})
-    
+
     return render_template("edit_profile.html", member=member)
 
 
